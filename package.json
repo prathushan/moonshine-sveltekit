@@ -19,10 +19,10 @@
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
-		"vite": "^6.2.5"
+		"vite": "^6.2.5",
+		"wrangler": "^4.12.0"
 	},
 	"dependencies": {
-		"@portabletext/svelte": "^3.0.0",
 		"@sanity/client": "^6.29.0"
 	}
 }
