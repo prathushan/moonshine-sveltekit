@@ -73,9 +73,9 @@
       font-weight: bold;
     }
   
-    .card-content p a {
+    /* .card-content p a {
       text-decoration: none;
-    }
+    } */
   
     /* Mobile responsiveness */
     @media (max-width: 768px) {

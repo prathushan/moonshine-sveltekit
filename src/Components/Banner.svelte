@@ -145,7 +145,7 @@
 
   <div class="hero-image">
     {#if banner.images && banner.images[0]?.asset?.url}
-      <img src={banner.images[0].asset.url} alt="Banner Image" />
+      <img src={banner.images[0].asset.url} alt="" />
     {/if}
   </div>
 </section>

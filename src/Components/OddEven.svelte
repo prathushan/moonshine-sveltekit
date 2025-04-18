@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { client } from '$lib/sanityClient';
-    import { oddEvenQuery } from '$lib/queries/oddEven';
+    import { oddEvenQuery } from '$lib/queries/OddEven';
   
     let section = null;
   
