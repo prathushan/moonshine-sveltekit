@@ -2,6 +2,8 @@
   import { onMount } from "svelte";
   import { client } from "$lib/sanityClient";
   import { footerQuery } from "$lib/queries/Footer";
+  import { getNewsletterHeadingQuery } from '$lib/queries/newsletterSettings';
+  import FooterNewsletter from './NewsletterForm.svelte';
 
   let footer = null;
 
@@ -12,6 +14,17 @@
       console.error("Failed to fetch footer:", err);
     }
   });
+
+  let heading = 'Newsletter';
+
+onMount(async () => {
+  try {
+    const res = await client.fetch(getNewsletterHeadingQuery);
+    heading = res?.heading || heading;
+  } catch (err) {
+    console.error('Failed to fetch newsletter heading:', err);
+  }
+});
 </script>
 
 {#if footer}
@@ -32,10 +45,16 @@
       </div>
 
       <div class="contact-section footer-con">
+        <div>
         <h3>CONTACT</h3>
         <p>{footer.contactEmail}</p>
         <p>{footer.contactNote}</p>
       </div>
+      <div>
+        <FooterNewsletter {heading} />
+      </div>
+      </div>
+      
     </div>
       <div class="bottom-section">
         <!-- <img class="bottom-img" src={footer.companyLogo?.asset?.url} alt="Company Logo" /> -->
@@ -51,12 +70,18 @@
             </a>
           {/each}
         </div>
+       
       </div>
    
   </footer>
 {/if}
 
 <style>
+  .contact-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
   .footer-container {
     display: grid;
     grid-template-columns: 4fr 4fr 4fr;

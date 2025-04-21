@@ -34,7 +34,8 @@
       <!-- Sections Section -->
       <div class="sections">
         {#each section.sections as sec, i}
-          <div class="section-row {i % 2 === 0 ? 'left' : 'right'}" key={sec._key}>
+          <div class="section-row" key={sec._key}>
+            <!-- {i % 2 === 0 ? 'left' : 'right'} -->
             <div class="content">
               {#if sec.highlight}
                 <h3 class="highlight">
@@ -95,6 +96,7 @@
     padding: 40px 45px 65px 45px;
     
   }
+
   .main-heading  {
     font-family: 'Inter';
     font-weight: 550;
@@ -110,28 +112,37 @@
   .main-heading em {
     font-family: 'Covered By Your Grace';
     color: #009387;
-    font-size:70px;
+    font-size:60px;
     font-weight:400;
     line-height:100px;
   }
 
+  .sections{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    gap:30px;
+  }
 
   .section-row {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     margin-bottom: 4rem;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+  width:50%;
   }
 
-  .section-row.right {
+  /* .section-row.right {
     flex-direction: row-reverse;
-  }
+  } */
  .des{
     font-size:20px;
     color: #58595D;
  }
-
+/* 
  .left .content {
     max-width: 500px;
     padding: 1rem;
@@ -139,11 +150,11 @@
   .right .content {
     max-width: 700px;
     padding: 1rem;
-  }
+  } */
   .highlight{
     font-family: 'Inter';
     font-weight: 500;
-    font-size: 73px;
+    font-size: 53px;
     line-height: 80px;
     margin-bottom: 10px;
   }
@@ -205,6 +216,7 @@
   border-right: 4px solid black;
   border-bottom: 6px solid black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  margin-top:20px;
     
   }
   .button-link{

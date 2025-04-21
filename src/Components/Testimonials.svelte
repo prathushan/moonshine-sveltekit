@@ -63,7 +63,7 @@ import { browser } from '$app/environment'; // Import browser check
 </script>
 
 <section class="testimonial-section">
-  <h2>PostPilot is 🔥 for <span class="dtc">DTC</span></h2>
+  <h2>Moonshine is 🔥 for <span class="dtc">DTC</span></h2>
 
   <div class="carousel">
     <div class="slider-window">

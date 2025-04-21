@@ -45,6 +45,7 @@
 <style>
   .image-cards{
     margin:40px;
+    
   }
   .title {
     font-family: 'Inter';

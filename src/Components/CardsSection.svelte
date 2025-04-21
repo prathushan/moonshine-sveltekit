@@ -40,23 +40,22 @@
   
   <style>
     .brands-section {
-      padding: 4rem 2rem;
+      padding: 1rem;
       background-color: #ffffff;
       text-align: center;
     }
   
-    .section-title {
-    
-  
-       font-family: 'Covered By Your Grace';
+    .section-title  {
+      font-family: 'Inter';
       font-weight: 400;
       font-size: 52px;
       line-height: 66px;
     }
   
     .highlight {
+      font-family: 'Covered By Your Grace';
       color: #00b4a8;
-      font-style: italic;
+     
     }
   
     .cards-container {
@@ -67,8 +66,7 @@
     }
   
     .card {
-      width: 220px;
-      height:500px
+      
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -89,8 +87,9 @@
       font-weight: 600;
       color: #000;
       text-align: center;
-      font-family: 'Covered By Your Grace';
+      font-family: 'Inter';
       font-weight: 400;   
-      line-height: 66px;
+      line-height: 30px;
+      margin-top:5px;
     }
   </style>

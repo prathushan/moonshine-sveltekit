@@ -26,13 +26,14 @@
   }
 
   .hero-text h1 {
-    font-family: 'Covered By Your Grace';
+   font-family:'Inter';
     font-weight: 400;
     font-size: 82px;
     line-height: 66px;
   }
 
   .highlight {
+    font-family: 'Covered By Your Grace';
     color: #00a5a5;
     font-style: italic;
   }
@@ -100,12 +101,14 @@
   .hero-image {
     flex: 1;
     text-align: right;
+
   }
 
   .hero-image img {
     max-width: 100%;
     max-height: 500px;
     height:500px;
+    border-radius:10px;
   }
 </style>
 
@@ -145,7 +148,7 @@
 
   <div class="hero-image">
     {#if banner.images && banner.images[0]?.asset?.url}
-      <img src={banner.images[0].asset.url} alt="" />
+      <img  src={banner.images[0].asset.url} alt="" />
     {/if}
   </div>
 </section>
