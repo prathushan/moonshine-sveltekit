@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import adapter from '@sveltejs/adapter-auto';
+=======
+import adapter from '@sveltejs/adapter-cloudflare';
+>>>>>>> b8e9f07 (combine files)
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,4 +14,8 @@ const config = {
 	}
 };
 
+<<<<<<< HEAD
 export default config;
+=======
+export default config;
+>>>>>>> b8e9f07 (combine files)

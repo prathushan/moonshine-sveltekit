@@ -1,7 +1,11 @@
 <script>
     import { onMount } from 'svelte';
     import { client } from '$lib/sanityClient';
+<<<<<<< HEAD
     import { oddEvenQuery } from '$lib/queries/OddEven';
+=======
+    import { oddEvenQuery } from '$lib/queries/oddEven';
+>>>>>>> b8e9f07 (combine files)
   
     let section = null;
   
