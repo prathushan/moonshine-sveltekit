@@ -40,11 +40,8 @@
       </div>
     </div>
       <div class="bottom-section">
-<<<<<<< HEAD
-       
-=======
         <img class="bottom-img" src={footer.companyLogo?.asset?.url} alt="Company Logo" />
->>>>>>> b8e9f07 (combine files)
+
         <p>{footer.copyright}</p>
 
         <div class="buttons">
