@@ -90,9 +90,9 @@
     width: 40%;
   }
 
-  .bottom-img {
+  /* .bottom-img {
     width: 8%;
-  }
+  } */
 
   .eco-section p {
     margin: 0;
@@ -139,10 +139,10 @@
       grid-template-columns: 1fr;
     }
 
-    .eco-img,
+    /* .eco-img,
     .bottom-img {
       width: 60%;
-    }
+    } */
 
     .bottom-section {
       margin-top: 2rem;

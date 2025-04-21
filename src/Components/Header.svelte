@@ -17,8 +17,9 @@
   {#if header}
     <header class="header">
       <div class="header-container">
+        <a href="/">
         <img src={header.logo.asset.url} alt="Logo" class="logo" />
-  
+      </a>
         <nav class="nav-menu">
           <ul class="menu">
             {#each header.menuItems as item}
