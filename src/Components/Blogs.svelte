@@ -1,4 +1,5 @@
 <script>
+<<<<<<< HEAD
   import { onMount } from 'svelte';
   export let limit = 3; // Default to 3, but can be overridden
   let blogs = [];
@@ -25,6 +26,31 @@
 </div>
 
 
+=======
+    import { onMount } from 'svelte';
+    let blogs = [];
+  
+    onMount(async () => {
+      const res = await fetch('/api/blogs');
+      blogs = await res.json();
+    });
+  </script>
+  
+  <div class="latest-trends-section">
+    <h1>Latest trends & <span class="mixed">insights</span></h1>
+    <div class="blog-grid">
+      {#each blogs as blog}
+        <a href={`/latest-trends/${blog.slug.current}`} class="blog-card">
+          <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" />
+          <div class="card-content">
+            <!-- <h3>{blog.title}</h3> -->
+            <p>{blog.shortDescription}</p>
+          </div>
+        </a>
+      {/each}
+    </div>
+  </div>
+>>>>>>> b8e9f07 (combine files)
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
@@ -34,7 +60,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       
+<<<<<<< HEAD
       
+=======
+>>>>>>> b8e9f07 (combine files)
     }
   
     .blog-card {
@@ -49,7 +78,11 @@
     }
   
     .latest-trends-section {
+<<<<<<< HEAD
       background-color: #E3F8F8;
+=======
+      background-color: #F3FAFA;
+>>>>>>> b8e9f07 (combine files)
       padding: 60px 30px;
     }
   

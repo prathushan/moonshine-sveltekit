@@ -19,10 +19,17 @@
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
+<<<<<<< HEAD
 		"vite": "^6.2.5",
 		"wrangler": "^4.12.0"
 	},
 	"dependencies": {
+=======
+		"vite": "^6.2.5"
+	},
+	"dependencies": {
+		"@portabletext/svelte": "^3.0.0",
+>>>>>>> b8e9f07 (combine files)
 		"@sanity/client": "^6.29.0"
 	}
 }

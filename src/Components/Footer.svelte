@@ -18,7 +18,9 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="eco-section footer-con">
+        <a href="/" class="logo-link">
         <img class="eco-img" src={footer.ecoBadge?.asset?.url} alt="Eco Friendly" />
+        </a>
         <p>{footer.ecoText}</p>
       </div>
 
@@ -38,7 +40,11 @@
       </div>
     </div>
       <div class="bottom-section">
+<<<<<<< HEAD
        
+=======
+        <img class="bottom-img" src={footer.companyLogo?.asset?.url} alt="Company Logo" />
+>>>>>>> b8e9f07 (combine files)
         <p>{footer.copyright}</p>
 
         <div class="buttons">
@@ -126,7 +132,11 @@
     margin-top: 5%;
     padding-top: 2rem;
     border-top: 1px solid #ccc; 
+<<<<<<< HEAD
    text-align:right;
+=======
+   
+>>>>>>> b8e9f07 (combine files)
   }
 
 
