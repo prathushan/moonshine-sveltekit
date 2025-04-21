@@ -22,6 +22,7 @@
 {:else if !servicesData}
   <p>Loading...</p>
 {:else}
+<section class="bg-full">
   <section class="services-section">
     <!-- Main Title -->
     <div class="main-title">
@@ -96,14 +97,18 @@
       </a>
     {/if}
   </section>
+  </section>
 {/if}
 
 <style>
+  .bg-full{
+    background-color: #E3F8F8;
+  }
   .services-section {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #E3F8F8;
+   
   }
 
   .main-title, .secondary-title {

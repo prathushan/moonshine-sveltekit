@@ -1,7 +1,8 @@
-export function slugify(str) {
-    return str
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')   // replace non-alphanum with dashes
-      .replace(/(^-|-$)/g, '');      // remove starting/trailing dashes
-  }
-  
+export function slugify(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // remove non-word
+    .replace(/\s+/g, '-')     // spaces to dashes
+    .replace(/-+/g, '-')
+    .trim();
+}
