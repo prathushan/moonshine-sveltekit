@@ -64,7 +64,7 @@
   
   <style>
     .contact-section {
-      max-width: 1200px;
+      /* max-width: 1200px; */
       margin: 0 auto;
       padding: 2rem;
       background-color: #E3F8F8;
