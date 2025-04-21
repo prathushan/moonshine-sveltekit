@@ -38,8 +38,8 @@
       </div>
     </div>
       <div class="bottom-section">
-        <img class="bottom-img" src={footer.companyLogo?.asset?.url} alt="Company Logo" />
-        <p>{footer.copyright}</p>
+        <!-- <img class="bottom-img" src={footer.companyLogo?.asset?.url} alt="Company Logo" /> -->
+        <p class="cpy-right">{footer.copyright}</p>
 
         <div class="buttons">
           {#each footer.footerButtons as btn}
@@ -61,6 +61,9 @@
     display: grid;
     grid-template-columns: 4fr 4fr 4fr;
     gap: 1rem;
+  }
+  .cpy-right{
+    text-align:right;
   }
 
   .footer {
@@ -90,9 +93,9 @@
     width: 40%;
   }
 
-  .bottom-img {
+  /* .bottom-img {
     width: 8%;
-  }
+  } */
 
   .eco-section p {
     margin: 0;
@@ -139,10 +142,10 @@
       grid-template-columns: 1fr;
     }
 
-    .eco-img,
+    /* .eco-img,
     .bottom-img {
       width: 60%;
-    }
+    } */
 
     .bottom-section {
       margin-top: 2rem;
