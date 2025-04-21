@@ -12,7 +12,7 @@
 <a href={`/news/${item.slug}`}>
   <div>
     <h2>{item.title}</h2>
-    <img src={item.image} alt="Image" style="max-width: 100%;" />
+    <img src={item.image}  style="max-width: 100%;" />
     <p>{item.description}</p>
     
   </div>

@@ -60,7 +60,7 @@
   
     .cards-container {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       flex-wrap: wrap;
       gap: 2rem;
     }
