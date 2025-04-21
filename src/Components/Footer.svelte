@@ -38,7 +38,7 @@
       </div>
     </div>
       <div class="bottom-section">
-        <img class="bottom-img" src={footer.companyLogo?.asset?.url} alt="Company Logo" />
+       
         <p>{footer.copyright}</p>
 
         <div class="buttons">
@@ -126,7 +126,7 @@
     margin-top: 5%;
     padding-top: 2rem;
     border-top: 1px solid #ccc; 
-   
+   text-align:right;
   }
 
 

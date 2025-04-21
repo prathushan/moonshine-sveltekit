@@ -26,10 +26,10 @@
   }
 
   .hero-text h1 {
-    font-family: 'Covered By Your Grace';
+    
     font-weight: 400;
     font-size: 82px;
-    line-height: 66px;
+    line-height: 86px;
   }
 
   .highlight {
