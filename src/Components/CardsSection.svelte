@@ -60,19 +60,21 @@
   
     .cards-container {
       display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      /* flex-wrap: wrap; */
       gap: 2rem;
     }
   
     .card {
       
-      display: flex;
+      /* display: flex;
       flex-direction: column;
       align-items: center;
       background: none;
       box-shadow: none;
       border-radius: 0;
+      width:300px; */
+      flex: 1 1 300px;
     }
   
     .card-image {
