@@ -48,7 +48,11 @@
     .section-title {
     
   
+<<<<<<< HEAD
        
+=======
+       font-family: 'Covered By Your Grace';
+>>>>>>> b8e9f07 (combine files)
       font-weight: 400;
       font-size: 52px;
       line-height: 66px;
@@ -89,7 +93,11 @@
       font-weight: 600;
       color: #000;
       text-align: center;
+<<<<<<< HEAD
      
+=======
+      font-family: 'Covered By Your Grace';
+>>>>>>> b8e9f07 (combine files)
       font-weight: 400;   
       line-height: 66px;
     }

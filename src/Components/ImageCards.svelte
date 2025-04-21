@@ -75,7 +75,11 @@
     flex-direction:column;
     justify-content:center;
     align-items:center;
+<<<<<<< HEAD
     flex: 1 1 320px;
+=======
+    flex: 1 1 350px;
+>>>>>>> b8e9f07 (combine files)
     padding: 3rem;
     border-radius: 1rem;
   }

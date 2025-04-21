@@ -26,10 +26,17 @@
   }
 
   .hero-text h1 {
+<<<<<<< HEAD
     
     font-weight: 400;
     font-size: 82px;
     line-height: 86px;
+=======
+    font-family: 'Covered By Your Grace';
+    font-weight: 400;
+    font-size: 82px;
+    line-height: 66px;
+>>>>>>> b8e9f07 (combine files)
   }
 
   .highlight {
@@ -145,7 +152,11 @@
 
   <div class="hero-image">
     {#if banner.images && banner.images[0]?.asset?.url}
+<<<<<<< HEAD
       <img src={banner.images[0].asset.url} alt="" />
+=======
+      <img src={banner.images[0].asset.url} alt="Banner Image" />
+>>>>>>> b8e9f07 (combine files)
     {/if}
   </div>
 </section>
