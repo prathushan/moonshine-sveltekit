@@ -4,7 +4,8 @@ export const blogListQuery = `
     title,
     slug,
     shortDescription,
-    mainImage { asset->{url} }
+    mainImage { asset->{url} },
+    publishedAt
   }
 `;
 
