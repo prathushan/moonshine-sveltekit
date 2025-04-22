@@ -34,7 +34,7 @@
       <div class="ft-eco ft-col">
         <img class="ft-eco-img" src={footer.ecoBadge?.asset?.url} alt="Eco Friendly" />
         <p>{footer.ecoText}</p>
-      </div>
+      </div >
 
       <div class="ft-company ft-col">
         <h3>COMPANY</h3>

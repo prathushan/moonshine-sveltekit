@@ -75,7 +75,7 @@
         width:80%;
         font-family: "Covered By Your Grace", cursive;
     color: #009387;
-    text-align: center;
+    text-align: left;
     }
     .res-msg{
         width:80%;
