@@ -1,30 +1,27 @@
-import { NEWS_API_KEY, NEWS_API_URL } from '$env/static/private';
+import { GNEWS_API_KEY, GNEWS_API_URL } from '$env/static/private';
 import { slugify } from '$lib/utils.js';
+import { error } from '@sveltejs/kit';
 
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
-  const url = `${NEWS_API_URL}?apikey=${NEWS_API_KEY}&category=business&language=en&q=ecommerce`;
-  const res = await fetch(url);
+  const apiUrl = `${GNEWS_API_URL}?q=ecommerce&lang=en&max=50&apikey=${GNEWS_API_KEY}`;
+  const res = await fetch(apiUrl);
   const data = await res.json();
 
-const articles = data.results
-  .filter((item) => item.image_url)
-  .map((item) => ({
+  const articles = data.articles.map((item) => ({
     title: item.title,
-    image: item.image_url,
-    description: item.description,
-    content: item.content?.includes('ONLY AVAILABLE IN PAID PLANS')
-      ? item.description
-      : item.content || item.description,
-    slug: slugify(item.title)
+    image: item.image,
+    description: item.description || 'No description',
+    content: item.content || item.description || 'No content',
+    date: item.publishedAt,
+    slug: slugify(item.title),
+    url: item.url
   }));
 
   const article = articles.find((a) => a.slug === params.slug);
 
   if (!article) {
-    return {
-      status: 404,
-      error: new Error('Article not found')
-    };
+    throw error(404, 'Article not found');
   }
 
   return { article };

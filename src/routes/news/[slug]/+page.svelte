@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     export let data;
   </script>
   
@@ -72,5 +72,107 @@
     .back-link:hover {
       color: #004bb4;
     }
-  </style>
+  </style> -->
+  
+  <script>
+    export let data;
+    const article = data.article;
+  </script>
+  
+  <article class="news-article">
+    <h1>{article.title}</h1>
+    <p class="date"><em>{new Date(article.date).toLocaleString()}</em></p>
+  
+    {#if article.image}
+      <img src={article.image} alt={article.title} class="featured-image" />
+    {/if}
+  
+    <div class="content">
+      {#if article.content && article.content.length > article.description.length}
+        <p>{article.content}</p>
+      {:else}
+        <p>{article.description}</p>
+      {/if}
+    </div>
+  
+    <p class="external-link">
+      <a href={article.url} target="_blank" rel="noopener noreferrer">
+        Read the full article
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          class="arrow-icon"
+        >
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+        </svg>
+      </a>
+    </p>
+  </article>
+
+  <style>
+  .news-article {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(232, 248, 249, 0.6), rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    color: #222;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+
+  .featured-image {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .external-link {
+    margin-top: 2rem;
+  }
+
+  .external-link a {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: #0077b6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    gap: 0.4rem;
+  }
+
+  .external-link a:hover .arrow-icon {
+    transform: rotate(20deg);
+  }
+
+  .arrow-icon {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+</style>
+
+  
   
