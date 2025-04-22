@@ -1,4 +1,4 @@
-import { NEWS_API_KEY, NEWS_API_URL } from '$env/static/private';
+import { GNEWS_API_KEY, GNEWS_API_URL } from '$env/static/private';
 import { slugify } from '$lib/utils.js';
 
 /** @type {import('./$types').PageServerLoad} */
@@ -6,18 +6,31 @@ export async function load({ url }) {
   const currentPage = parseInt(url.searchParams.get('page') || '1');
   const itemsPerPage = 10;
 
-  const apiUrl = `${NEWS_API_URL}?apikey=${NEWS_API_KEY}&category=business&language=en&q=ecommerce`;
+  // Fetch data from the API
+  const apiUrl = `${GNEWS_API_URL}?q=ecommerce&lang=en&max=50&apikey=${GNEWS_API_KEY}`;
   const res = await fetch(apiUrl);
-  const data = await res.json();
 
-  const allArticles = data.results
-    .filter((item) => item.image_url)
+  // Ensure we have a valid response
+  if (!res.ok) {
+    console.error(`Error fetching data: ${res.statusText}`);
+    throw new Error('Failed to fetch news articles');
+  }
+
+  const data = await res.json();
+  if (!data.articles || !Array.isArray(data.articles)) {
+    console.error('Invalid data structure:', data);
+    throw new Error('No articles found or invalid response format');
+  }
+  const allArticles = data.articles
+    .filter((item) => item.image)
     .map((item) => ({
       title: item.title,
-      image: item.image_url,
-      description: item.description,
-      content: item.content?.includes('ONLY AVAILABLE') ? item.description : item.content || item.description,
-      slug: slugify(item.title)
+      image: item.image,
+      description: item.description || 'No description available.',
+      content: item.content || item.description || 'No content available.',
+      date: item.publishedAt,
+      slug: slugify(item.title),
+      url: item.url
     }));
 
   const totalItems = allArticles.length;
