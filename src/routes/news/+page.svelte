@@ -1,12 +1,13 @@
  <script>
   export let data;
 </script>
-
+<div class="div-with-pattern ">
 <div class="steps-layout">
   {#if data.articles.length === 0}
     <p>No articles available. Please check back later.</p>
   {/if}
-
+ 
+  <h2 class="pos-abs">Latest News</h2>
   {#each data.articles as article, i}
     <div class="step-card {i % 3 === 0 ? 'step-1' : ''} {i % 3 === 1 ? 'step-2' : ''} {i % 3 === 2 ? 'step-3' : ''}">
       <img src={article.image} alt={article.title} class="news-image" />
@@ -39,32 +40,46 @@
     </div>
   {/each}
 </div>
+</div>
 
 
 
 
 <style>
+/* 
+.div-with-pattern {
+  background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
+  padding:10% 20px;
+} */
+
 
 .steps-layout {
+  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding: 3rem;
+  padding: 3rem ;
   position: relative;
   padding-bottom:250px;
   /* background: #e8f8f9; */
-  background: linear-gradient(to bottom, #e8f8f9 0%, #E0C3FC 100%),
-            url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"%3E%3Ccircle cx="3" cy="3" r="1" fill="%2300FF00" opacity="0.2" /%3E%3C/svg%3E') repeat;
+  /* background: linear-gradient(to bottom, #e8f8f9 0%, #E0C3FC 100%),
+            url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"%3E%3Ccircle cx="3" cy="3" r="1" fill="%2300FF00" opacity="0.2" /%3E%3C/svg%3E') repeat; */
+            background-color: #e8f8f9; 
+background-image: 
+  radial-gradient(circle, #e8f8f9 2px, transparent 2px),  /* Green Dots */
+  radial-gradient(circle, #E0C3FC 2px, transparent 2px);  /* Green Dots */
+background-size: 10px 10px;  /* Dot size and spacing */
+background-position: 0px 0px, 5px 5px; 
 }
-/* .pos-abs{
+.pos-abs{
   position:absolute;
   z-index:10;
   left:10%;
-  top:35%;
+  top:10%;
   font-size:30px;
-  font-family: 'Covered By Your Grace';
-} */
+  
+}
 
 /* Card base styling */
 .step-card {

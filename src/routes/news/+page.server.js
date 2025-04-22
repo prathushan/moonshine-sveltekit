@@ -7,7 +7,7 @@ export async function load({ url }) {
   const itemsPerPage = 10;
 
   // Fetch data from the API
-  const apiUrl = `${GNEWS_API_URL}?q=ecommerce&lang=en&max=50&apikey=${GNEWS_API_KEY}`;
+  const apiUrl = `${GNEWS_API_URL}?q=ecommerce&lang=en&max=9&apikey=${GNEWS_API_KEY}`;
   const res = await fetch(apiUrl);
 
   // Ensure we have a valid response
