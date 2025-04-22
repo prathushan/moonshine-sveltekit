@@ -9,9 +9,6 @@
     });
   </script>
 
-<style>
-  
-</style>
 
 {#if banner?.heading}
 <section class="hero">

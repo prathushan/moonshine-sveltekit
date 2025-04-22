@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { client } from '$lib/sanityClient';
   import { imageCardsQuery } from '$lib/queries/imageCards';
+  import "../app.css";
 
   let section = null;
 
@@ -15,13 +16,13 @@
 </script>
 
 {#if section}
-  <section class="image-cards">
-    <div class="title">
+  <section class="ic-wrapper">
+    <div class="ic-title">
       {#each section.title as block}
         {#if block._type === 'block'}
           {#each block.children as span}
             {#if span.marks && span.marks.includes('em')}
-              <em>{span.text}</em>
+              <em class="ic-em">{span.text}</em>
             {:else}
               {@html span.text}
             {/if}
@@ -30,12 +31,12 @@
       {/each}
     </div>
 
-    <div class="cards-container">
+    <div class="ic-container">
       {#each section.cards as card}
-        <div class="card" style="background-color: {card.backgroundColor}">
-          <img src={card.image.asset.url} alt={card.heading} />
-          <h3>{card.heading}</h3>
-          <p>{card.text}</p>
+        <div class="ic-card" style="background-color: {card.backgroundColor}">
+          <img src={card.image.asset.url} alt={card.heading} class="ic-img" />
+          <h3 class="ic-heading">{card.heading}</h3>
+          <p class="ic-text">{card.text}</p>
         </div>
       {/each}
     </div>
@@ -43,61 +44,4 @@
 {/if}
 
 <style>
-  .image-cards{
-    margin:40px;
-    
-  }
-  .title {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 80px;
-    line-height: 76px;
-    text-align: center;
-    margin: 15px auto;
-  }
-
-  em {
-    display: block;
-    font-family: "Covered By Your Grace", cursive;
-    color: #009387;
-    font-size:70px;
-    font-weight:400;
-    line-height:100px;
-  }
-
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .card {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    flex: 1 1 320px;
-    padding: 3rem;
-    border-radius: 1rem;
-  }
- 
-
-  .card img {
-   
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  .card h3{
-    font-weight:700;
-    font-size:28px;
-    line-height:36px;
-    text-align:center;
-  }
-  .card p{
-    text-align:center;
-    font-weight:500;
-    font-size:16px;
-    line-height:30px;
-  }
-</style>
+ </style>

@@ -2,7 +2,7 @@
     import { onMount } from 'svelte';
     import { client } from '$lib/sanityClient';
     import { cardsSectionQuery } from '$lib/queries/cardsSection';
-  
+    import "../app.css";
     let data = null;
   
     onMount(async () => {
@@ -38,60 +38,4 @@
     </section>
   {/if}
   
-  <style>
-    .brands-section {
-      padding: 1rem;
-      background-color: #ffffff;
-      text-align: center;
-    }
-  
-    .section-title  {
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 52px;
-      line-height: 66px;
-    }
-  
-    .highlight {
-      font-family: 'Covered By Your Grace';
-      color: #00b4a8;
-     
-    }
-  
-    .cards-container {
-      display: flex;
-      justify-content: space-between;
-      /* flex-wrap: wrap; */
-      gap: 2rem;
-    }
-  
-    .card {
-      
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: none;
-      box-shadow: none;
-      border-radius: 0;
-      width:300px; */
-      flex: 1 1 300px;
-    }
-  
-    .card-image {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      margin-bottom: 1rem;
-    }
-  
-    .card-title {
-      font-size: 24px;
-      font-weight: 600;
-      color: #000;
-      text-align: center;
-      font-family: 'Inter';
-      font-weight: 400;   
-      line-height: 30px;
-      margin-top:5px;
-    }
-  </style>
+ 

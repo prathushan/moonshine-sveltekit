@@ -120,6 +120,7 @@
   .main-title {
     font-size: 20px;
     color: #555;
+    display: none;
   }
 
   .secondary-title {
