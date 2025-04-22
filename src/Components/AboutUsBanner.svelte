@@ -1,11 +1,17 @@
 <script>
   export let bannerData;
+
+  const moonPositions = [
+    { top: '10%', left: '5%' },       // White Moon
+    { top: '20%', right: '8%' },      // Grey Moon
+    { bottom: '15%', left: '10%' },   // Green Moon
+    { bottom: '5%', right: '5%' }     // Black Moon
+  ];
 </script>
 
 <section class="about-banner">
   <!-- Top Section: Heading + Description -->
   <div class="text-section">
-    <span class="subheading">About us</span>
     <h1>{bannerData?.heading}</h1>
     <p>{bannerData?.description}</p>
   </div>
@@ -15,10 +21,25 @@
     class="image-section"
     style="background-image: url({bannerData?.bannerImage?.asset?.url});"
   ></div>
+
+  <!-- Decorative Moons -->
+  <img class="moon-deco" src="/moon-white.png" alt="White Moon" style="top: {moonPositions[0].top}; left: {moonPositions[0].left};" />
+  <img class="moon-deco" src="/moon-grey.png" alt="Grey Moon" style="top: {moonPositions[1].top}; right: {moonPositions[1].right};" />
+  <img class="moon-deco" src="/moon-green.png" alt="Green Moon" style="bottom: {moonPositions[2].bottom}; left: {moonPositions[2].left};" />
+  <img class="moon-deco" src="/moon-black.png" alt="Black Moon" style="bottom: {moonPositions[3].bottom}; right: {moonPositions[3].right};" />
 </section>
 
 <style>
+
+.moon-deco {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 1;
+}
   .about-banner {
+     position: relative;
     width: 100%;
     background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
   }

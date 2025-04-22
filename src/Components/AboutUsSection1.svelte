@@ -1,5 +1,13 @@
 <script>
   export let sectionData;
+
+  // Optional: You can adjust positions here
+   const moonPositions = [
+    { top: '12%', left: '6%' },      // white moon
+    { bottom: '18%', right: '9%' },  // grey moon
+    { top: '55%', left: '75%' },     // green moon
+    { bottom: '5%', left: '8%' }     // black moon (new position)
+  ];
 </script>
 
 <section class="about-section">
@@ -21,15 +29,23 @@
             <img class="image" src={sectionData.image1.asset.url} alt="Main Image" />
           </div>
 
-            <div class="image-container"> 
-          <img class="image" src={sectionData.image2.asset.url} alt="Overlay Image" />
-           <span class="corner-deco1"></span>
+          <div class="image-container"> 
+            <img class="image" src={sectionData.image2.asset.url} alt="Overlay Image" />
+            <span class="corner-deco1"></span>
+          </div>
         </div>
-      </div>
       </div>
     {/if}
   </div>
+
+  <!-- Decorative moons -->
+  <img class="moon-deco" src="/moon-white.png" alt="White Moon" style="top: {moonPositions[0].top}; left: {moonPositions[0].left};" />
+<img class="moon-deco" src="/moon-grey.png" alt="Grey Moon" style="bottom: {moonPositions[1].bottom}; right: {moonPositions[1].right};" />
+<img class="moon-deco" src="/moon-green.png" alt="Green Moon" style="top: {moonPositions[2].top}; left: {moonPositions[2].left};" />
+<img class="moon-deco" src="/moon-black.png" alt="Black Moon" style="bottom: {moonPositions[3].bottom}; left: {moonPositions[3].left};" />
+   
 </section>
+
 
 <style>
   .about-section {
@@ -40,6 +56,25 @@
     justify-content: center;
   }
 
+
+
+  
+  .moon-deco {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+ 
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-section {
+  position: relative; /* Required for absolute positioning inside */
+  background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
   .content-wrapper {
     display: flex;
     max-width: 1200px;
