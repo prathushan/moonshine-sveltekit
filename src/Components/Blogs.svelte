@@ -68,7 +68,7 @@
 
   .lt-asym-grid {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 42%;
     grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
     height: 70vh;
