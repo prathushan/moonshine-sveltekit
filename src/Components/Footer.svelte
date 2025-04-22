@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import { client } from "$lib/sanityClient";
   import { footerQuery } from "$lib/queries/Footer";
-  import { getNewsletterHeadingQuery } from '$lib/queries/newsletterSettings';
   import FooterNewsletter from './NewsletterForm.svelte';
   import "../app.css";
 
@@ -34,15 +33,39 @@
       <div class="ft-eco ft-col">
         <img class="ft-eco-img" src={footer.ecoBadge?.asset?.url} alt="Eco Friendly" />
         <p>{footer.ecoText}</p>
-      </div>
+      </div >
 
-      <div class="ft-company ft-col">
-        <h3>COMPANY</h3>
-        <ul class="ft-links">
-          {#each footer.companyLinks as link}
-            <li><a href={link.url} target="_blank">{link.label}</a></li>
-          {/each}
-        </ul>
+      <div class="ft-main-links">
+        <!-- Company Links Section -->
+        <div class="ft-company">
+          <h3>COMPANY</h3>
+          <ul class="ft-links">
+            {#each footer.companyLinks as link}
+              <li><a href={link.url} target="_blank">{link.label}</a></li>
+            {/each}
+          </ul>
+        </div>
+
+        <!-- Social Links Section -->
+        <div class="ft-social">
+          <h3>SOCIAL</h3>
+          <div class="social-icons">
+            <div class="social-row">
+              {#each footer.socialLinks.slice(0, 2) as link}
+                <a href={link.url} target="_blank" class="icon-link" aria-label={link.platform}>
+                  <img src={`/icons/${link.platform}.svg`} alt={link.platform} width="24" height="24"/>
+                </a>
+              {/each}
+            </div>
+            <div class="social-row">
+              {#each footer.socialLinks.slice(2, 4) as link}
+                <a href={link.url} target="_blank" class="icon-link" aria-label={link.platform}>
+                  <img src={`/icons/${link.platform}.svg`} alt={link.platform} width="24" height="24"/>
+                </a>
+              {/each}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="ft-contact ft-col">
@@ -74,5 +97,98 @@
 {/if}
 
 <style>
-  
+  .ft-root {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+  }
+
+  .ft-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .ft-col {
+    flex: 1;
+  }
+
+  .ft-main-links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;  /* Space between the links section */
+  }
+
+  .ft-company {
+    text-align: center;
+  }
+
+  .ft-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ft-links li {
+    margin: 10px 0;
+  }
+
+  .ft-links a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .ft-links a:hover {
+    color: #ff6600;
+  }
+
+  .ft-social {
+    text-align: center;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .social-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .icon-link img {
+    transition: transform 0.3s ease;
+    filter: grayscale(100%) brightness(0) invert(1); /* Black color for icons */
+  }
+
+  .icon-link img:hover {
+    transform: scale(1.2);
+  }
+
+  .ft-bottom {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .ft-btn-primary, .ft-btn-secondary {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  .ft-btn-primary {
+    background-color: #ff6600;
+    color: white;
+  }
+
+  .ft-btn-secondary {
+    background-color: transparent;
+    color: #ff6600;
+    border: 2px solid #ff6600;
+  }
 </style>
