@@ -1,11 +1,25 @@
 <script>
   import { onMount } from 'svelte';
   export let limit = 3;
+
   let blogs = [];
+  let sectionTitle = 'Loading...';
 
   onMount(async () => {
-    const res = await fetch('/api/blogs');
-    blogs = await res.json();
+    try {
+      const [blogsRes, settingsRes] = await Promise.all([
+        fetch('/api/blogs'),
+        fetch('/api/BlogSettings')
+      ]);
+
+      blogs = await blogsRes.json();
+
+      const settingsData = await settingsRes.json();
+      sectionTitle = settingsData?.sectionTitle || 'Latest trends & insights';
+    } catch (err) {
+      console.error('Failed to load data:', err);
+      sectionTitle = 'Latest trends & insights';
+    }
   });
 
   const formatDate = (date) =>
@@ -13,9 +27,7 @@
 </script>
 
 <div class="lt-section">
-  <h1 class="lt-title">
-    Latest trends & insights
-  </h1>
+  <h1 class="lt-title">{sectionTitle}</h1>
 
   <div class="lt-asym-grid">
     {#each blogs.slice(0, limit) as blog, i}
@@ -23,9 +35,7 @@
         <img src={blog.mainImage.asset.url} alt={blog.title} class="lt-image" />
 
         <div class="lt-meta">
-          <!-- Use the publishedAt date for each blog -->
           <span class="lt-date">{formatDate(blog.publishedAt)}</span>
-          <!-- <span class="lt-tag">{blog.category || 'General'}</span> -->
         </div>
 
         <div class="lt-title-bubble">{blog.title}</div>
@@ -36,8 +46,10 @@
       </a>
     {/each}
   </div>
+
   <a href="/blogs" class="view-all">See all posts →</a>
 </div>
+
 
 
 <style>
@@ -48,10 +60,11 @@
 
   .lt-title {
     text-align: center;
-    font-size: 20px;
+    font-size: 50px;
     font-weight: bold;
     margin-bottom: 2.5rem;
     color: #2e2f35;
+    font-family: inter;
   }
 
   .view-all {
