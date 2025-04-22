@@ -20,13 +20,14 @@
 <style>
   .about-banner {
     width: 100%;
+    background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
   }
 
   .text-section {
-    background-color: white;
-    padding: 4rem 2rem;
+    
+    padding: 2rem 1rem;
     text-align: left;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -40,16 +41,18 @@
 
   .text-section h1 {
     color: #1d2d3c;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 500;
     margin-bottom: 1rem;
+    font-family:inter;
   }
 
   .text-section p {
     color: #1d2d3c;
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
     line-height: 1.5;
+    font-family:inter;
   }
 
   .image-section {
