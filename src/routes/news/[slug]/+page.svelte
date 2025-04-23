@@ -119,15 +119,15 @@
 
     background-color: #e8f8f9; 
 background-image: 
-  radial-gradient(circle, #e8f8f9 2px, transparent 2px),  /* Green Dots */
-  radial-gradient(circle, #E0C3FC 2px, transparent 2px);  /* Green Dots */
-background-size: 10px 10px;  /* Dot size and spacing */
+  radial-gradient(circle, #e8f8f9 2px, transparent 2px),  
+  radial-gradient(circle, #E0C3FC 2px, transparent 2px);  
+background-size: 10px 10px;  
 background-position: 0px 0px, 5px 5px; 
 
   }
   .full-con{
     max-width: 800px;
-    margin: 3rem auto;
+    margin: 1rem auto;
     padding: 2rem;
     /* background: linear-gradient(135deg, rgba(232, 248, 249, 0.6), rgba(255, 255, 255, 0.3)); */
     /* backdrop-filter: blur(10px);
@@ -135,7 +135,7 @@ background-position: 0px 0px, 5px 5px;
     /* border-radius: 1rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); */
     color: #222;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
 
 
@@ -148,7 +148,7 @@ background-position: 0px 0px, 5px 5px;
 
   .date {
     font-size: 0.9rem;
-    color: #777;
+    /* color: #777; */
     margin-bottom: 1rem;
   }
 
