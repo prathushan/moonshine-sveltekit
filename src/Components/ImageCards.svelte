@@ -44,4 +44,82 @@
 {/if}
 
 <style>
+   .ic-wrapper {
+    margin: 40px;
+  }
+
+  .ic-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 60px;
+    text-align: center;
+    margin: 15px auto;
+  }
+
+  .ic-em {
+    display: block;
+    font-family: "Covered By Your Grace", cursive;
+    color: #009387;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 100px;
+  }
+
+  .ic-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .ic-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 320px;
+    padding: 3rem;
+    border-radius: 1rem;
+  }
+
+  .ic-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .ic-heading {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .ic-text {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+
+   @media (max-width: 768px) {
+  .ic-title, .ic-em{
+    font-size: 34px;
+    line-height: 40px; 
+    text-align: left;
+  }
+  .ic-wrapper{
+   margin: 30px;
+  }
+  .ic-text{
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .ic-card{
+    padding: 2rem;
+  }
+}
  </style>
