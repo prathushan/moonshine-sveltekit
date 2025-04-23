@@ -16,7 +16,7 @@
       <h2>{sectionData?.title}</h2>
       <div class="subtitle">
         <span class="highlight">{sectionData?.subTitle}</span>
-        <span> as an affirmation that we always accompanied by customers and communities.</span>
+        <span> </span>
       </div>
       <p>{sectionData?.description}</p>
     </div>
@@ -110,7 +110,7 @@
   .highlight {
     color: #00b386;
     font-weight: 700;
-     font-size: 18px;
+     font-size: 28px;
   }
 
   p {
@@ -190,4 +190,71 @@
       height: 16px;
     }
   }
+
+/* Tablet view (up to 1024px) */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .image-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .image {
+    width: 250px;
+    height: auto;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  .subtitle,
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile view (up to 600px) */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 36px;
+  }
+
+  .image-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
+  .corner-deco,
+  .corner-deco1 {
+    width: 14px;
+    height: 14px;
+    top: -6px;
+    left: -6px;
+    border-width: 3px;
+  }
+
+  .subtitle,
+  .highlight,
+  p {
+    font-size: 15px;
+  }
+}
+
+
+
+
 </style>

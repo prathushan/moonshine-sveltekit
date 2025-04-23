@@ -169,7 +169,7 @@
   .social-icons {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
   }
 

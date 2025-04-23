@@ -83,4 +83,60 @@
     filter: grayscale(100%);
     position: relative;
   }
+
+
+/* Mobile (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  
+    body {
+    margin: 0;
+    max-width: 100% !important;
+   }
+  .text-section h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .text-section p {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .image-section {
+    height: 25vh;
+  }
+
+  .moon-deco {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Tablet (min-width: 768px and max-width: 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .text-section h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .text-section p {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .image-section {
+    height: 25vh;
+  }
+
+  .moon-deco {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+
+
 </style>
