@@ -34,7 +34,7 @@
     <div class="ic-container">
       {#each section.cards as card}
         <div class="ic-card" style="background-color: {card.backgroundColor}">
-          <img src={card.image.asset.url} alt={card.heading} class="ic-img" />
+          <img src={card.image.asset.url} alt={card.heading} class="ic-img"  loading="lazy" />
           <h3 class="ic-heading">{card.heading}</h3>
           <p class="ic-text">{card.text}</p>
         </div>

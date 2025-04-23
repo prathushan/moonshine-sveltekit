@@ -26,10 +26,10 @@
   ></div>
 
   <!-- Decorative Moons -->
-  <img class="moon-deco" src="/moon-white.png" alt="White Moon" style="top: {moonPositions[0].top}; left: {moonPositions[0].left};" />
-  <img class="moon-deco" src="/moon-grey.png" alt="Grey Moon" style="top: {moonPositions[1].top}; right: {moonPositions[1].right};" />
-  <img class="moon-deco" src="/moon-green.png" alt="Green Moon" style="bottom: {moonPositions[2].bottom}; left: {moonPositions[2].left};" />
-  <img class="moon-deco" src="/moon-black.png" alt="Black Moon" style="bottom: {moonPositions[3].bottom}; right: {moonPositions[3].right};" />
+  <img class="moon-deco" src="/moon-white.png" loading="lazy" alt="White Moon" style="top: {moonPositions[0].top}; left: {moonPositions[0].left};" />
+  <img class="moon-deco" src="/moon-grey.png"  loading="lazy" alt="Grey Moon" style="top: {moonPositions[1].top}; right: {moonPositions[1].right};" />
+  <img class="moon-deco" src="/moon-green.png"  loading="lazy" alt="Green Moon" style="bottom: {moonPositions[2].bottom}; left: {moonPositions[2].left};" />
+  <img class="moon-deco" src="/moon-black.png" loading="lazy"  alt="Black Moon" style="bottom: {moonPositions[3].bottom}; right: {moonPositions[3].right};" />
 </section>
 
 <style>
@@ -56,13 +56,13 @@
     margin: 0 auto;
   }
 
-  .text-section .subheading {
+  /* .text-section .subheading {
     color: #00c084;
     font-weight: bold;
     display: inline-block;
     margin-bottom: 1rem;
     border-bottom: 2px solid #00c084;
-  }
+  } */
 
   .text-section h1 {
     color: #1d2d3c;

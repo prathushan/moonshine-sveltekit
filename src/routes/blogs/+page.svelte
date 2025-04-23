@@ -33,7 +33,7 @@
     {#each blogs.slice(0, 3) as blog, i}
       <a href={`/latest-trends/${blog.slug.current}`} class={`blog-card ${i === 0 ? 'featured-large' : 'featured-small'}`}>
         <div class="blog-image-wrapper">
-          <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" />
+          <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" loading="lazy"  />
           <div class="blog-meta">
             <span class="blog-date">{formatDate(blog.publishedAt)}</span>
           </div>
@@ -53,7 +53,7 @@
       {#each blogs.slice(3) as blog}
         <a href={`/latest-trends/${blog.slug.current}`} class="blog-card blog-card-extra">
           <div class="blog-image-wrapper">
-            <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" />
+            <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image"  loading="lazy" />
             <div class="blog-meta">
               <span class="blog-date">{formatDate(blog.publishedAt)}</span>
             </div>

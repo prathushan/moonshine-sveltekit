@@ -53,18 +53,18 @@
            <div class="social-icons">
           <div class="social-row">
             <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <img src="/facebook.svg" alt="Facebook" width="50" height="50" />
+              <img src="/facebook.svg" alt="Facebook" width="50" height="50"  loading="lazy" />
             </a>
             <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-              <img src="/twitter.svg" alt="Twitter" width="50" height="50" />
+              <img src="/twitter.svg" alt="Twitter" width="50" height="50"  loading="lazy" />
             </a>
           </div>
           <div class="social-row">
             <a href="https://tiktok.com" target="_blank" aria-label="LinkedIn">
-              <img src="/tik.webp" alt="Tiktok" width="50" height="50" />
+              <img src="/tik.webp" alt="Tiktok" width="50" height="50"  loading="lazy" />
             </a>
             <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <img src="/insta.png" alt="Instagram" width="50" height="50" />
+              <img src="/insta.png" alt="Instagram" width="50" height="50"  loading="lazy" />
             </a>
           </div>
         </div> 

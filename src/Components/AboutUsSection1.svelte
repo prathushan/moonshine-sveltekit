@@ -26,11 +26,11 @@
         <div class="image-row">
           <div class="image-container">
             <span class="corner-deco"></span>
-            <img class="image" src={sectionData.image1.asset.url} alt="Main Image" />
+            <img class="image" src={sectionData.image1.asset.url} alt=""  loading="lazy"  />
           </div>
 
           <div class="image-container"> 
-            <img class="image" src={sectionData.image2.asset.url} alt="Overlay Image" />
+            <img class="image" src={sectionData.image2.asset.url} alt=""  loading="lazy"  />
             <span class="corner-deco1"></span>
           </div>
         </div>
@@ -39,10 +39,10 @@
   </div>
 
   <!-- Decorative moons -->
-  <img class="moon-deco" src="/moon-white.png" alt="White Moon" style="top: {moonPositions[0].top}; left: {moonPositions[0].left};" />
-<img class="moon-deco" src="/moon-grey.png" alt="Grey Moon" style="bottom: {moonPositions[1].bottom}; right: {moonPositions[1].right};" />
-<img class="moon-deco" src="/moon-green.png" alt="Green Moon" style="top: {moonPositions[2].top}; left: {moonPositions[2].left};" />
-<img class="moon-deco" src="/moon-black.png" alt="Black Moon" style="bottom: {moonPositions[3].bottom}; left: {moonPositions[3].left};" />
+  <img class="moon-deco" src="/moon-white.png" alt="White Moon"  loading="lazy"  style="top: {moonPositions[0].top}; left: {moonPositions[0].left};" />
+<img class="moon-deco" src="/moon-grey.png" alt="Grey Moon"  loading="lazy"  style="bottom: {moonPositions[1].bottom}; right: {moonPositions[1].right};" />
+<img class="moon-deco" src="/moon-green.png" alt="Green Moon"  loading="lazy"  style="top: {moonPositions[2].top}; left: {moonPositions[2].left};" />
+<img class="moon-deco" src="/moon-black.png" alt="Black Moon"  loading="lazy"  style="bottom: {moonPositions[3].bottom}; left: {moonPositions[3].left};" />
    
 </section>
 

@@ -19,7 +19,7 @@
     <header class="header">
       <div class="header-container">
         <a href="/">
-        <img src={header.logo.asset.url} alt="Logo" class="logo" />
+        <img src={header.logo.asset.url} alt="Logo" class="logo"  loading="lazy" />
       </a>
         <nav class="nav-menu">
           <ul class="menu">

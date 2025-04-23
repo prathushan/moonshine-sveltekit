@@ -70,6 +70,7 @@
                       src={sec.testimonial.companyLogo.asset.url}
                       alt="Company Logo"
                       class="oe-logo"
+                      loading="lazy" 
                     />
                   {/if}
                 </div>

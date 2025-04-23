@@ -88,7 +88,7 @@
     <p class="date"><em>{new Date(article.date).toLocaleString()}</em></p>
   
     {#if article.image}
-      <img src={article.image} alt={article.title} class="featured-image" />
+      <img src={article.image} alt={article.title} class="featured-image"  loading="lazy" />
     {/if}
   
     <div class="content">

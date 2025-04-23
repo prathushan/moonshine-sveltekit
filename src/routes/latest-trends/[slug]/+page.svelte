@@ -6,7 +6,7 @@
   <article class="blog-post">
     <h1>{blog.title}</h1>
     <p class="date">{new Date(blog.publishedAt).toLocaleDateString()}</p>
-    <img src={blog.mainImage.asset.url} alt={blog.title} class="main-image" />
+    <img src={blog.mainImage.asset.url} alt={blog.title} class="main-image" loading="lazy"  />
     <p class="short-desc">{blog.shortDescription}</p>
   
     <div class="content">

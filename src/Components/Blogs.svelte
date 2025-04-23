@@ -44,7 +44,7 @@
   <div class="lt-asym-grid">
     {#each blogs.slice(0, limit) as blog, i}
       <a href={`/latest-trends/${blog.slug.current}`} class={`lt-card ${i === 0 ? 'large' : 'small'}`}>
-        <img src={blog.mainImage.asset.url} alt={blog.title} class="lt-image" />
+        <img src={blog.mainImage.asset.url} alt={blog.title} class="lt-image"  loading="lazy" />
 
         <div class="lt-meta">
           <span class="lt-date">{formatDate(blog.publishedAt)}</span>
