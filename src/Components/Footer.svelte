@@ -32,7 +32,7 @@
     <div class="ft-container">
       <div class="ft-eco ft-col">
         <img class="ft-eco-img" src={footer.ecoBadge?.asset?.url} alt="Eco Friendly" />
-        <p>{footer.ecoText}</p>
+        <p class="logo-head">{footer.ecoText}</p>
       </div >
 
       <div class="ft-main-links">
@@ -102,7 +102,16 @@
 
 <style>
 
-  
+  .logo-head{
+        margin-left: 30px;
+
+  }
+
+
+  .ft-company,.ft-social,.ft-contact {
+        margin-top: 30px;
+  }
+
   .ft-root {
     background-color: #f8f8f8;
     padding: 40px 40px;
