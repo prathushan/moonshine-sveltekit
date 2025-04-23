@@ -18,7 +18,7 @@
       sectionTitle = settingsData?.sectionTitle || 'Latest trends & insights';
     } catch (err) {
       console.error('Failed to load data:', err);
-      sectionTitle = 'Latest trends & insights';
+      // sectionTitle = 'Latest trends & insights';
     }
   });
 
@@ -27,7 +27,18 @@
 </script>
 
 <div class="lt-section">
-  <h1 class="lt-title">{sectionTitle}</h1>
+  <h1 class="lt-title">
+    {#each sectionTitle.split(' ') as word, i}
+      {#if word.toLowerCase().includes('insights')}
+        <span style="color: #0C9A8B; font-family: 'Covered By Your Grace', cursive;">
+          {word}
+        </span>
+      {:else}
+        {word}
+      {/if}
+      {i !== sectionTitle.split(' ').length - 1 ? ' ' : ''}
+    {/each}
+  </h1>
 
   <div class="lt-asym-grid">
     {#each blogs.slice(0, limit) as blog, i}
