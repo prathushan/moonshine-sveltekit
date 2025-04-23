@@ -234,4 +234,14 @@
       height: auto;
     }
   }
+  @media (max-width: 768px) {
+   .blog-heading{
+      font-size: 34px;
+    line-height: 40px; 
+    text-align: left;
+    }
+    .blog-grid{
+      display:block;
+    }
+  }
 </style>

@@ -200,10 +200,15 @@
     }
   }
   @media (max-width: 768px) {
-    .lt-title{
+    .lt-title, .blog-heading{
       font-size: 34px;
     line-height: 40px; 
     text-align: left;
     }
   }
+  @media (max-width: 360px) {
+  .lt-title-bubble {
+    font-size: 10px;
+  }
+}
 </style>
