@@ -61,10 +61,16 @@
         color: #009387;
       text-decoration: underline;
     }
+    .breadcrumb a::first-letter {
+  text-transform: uppercase;
+}
   
     [aria-current="page"] {
-      font-weight: bold;
+
       color: black;
     }
+    [aria-current="page"]::first-letter {
+  text-transform: uppercase;
+}
   </style>
   
