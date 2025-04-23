@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { servicesQuery } from '$lib/queries/Services';
+  import SkeltonCard from '../Components/SkeltonCard.svelte';
+  import Breadcrumbs from '../Components/Breadcrumbs.svelte';
 
   let servicesData: any = null;
   let error = '';
@@ -9,7 +11,10 @@
     try {
       const res = await fetch('/api/services'); // updated to match your actual API
       const data = await res.json();
-      servicesData = data;
+      
+      setTimeout(() => {
+        servicesData = data;
+    }, 600);
     } catch (err) {
       console.error(err);
       error = 'Failed to load services.';
@@ -20,10 +25,13 @@
 {#if error}
   <p>{error}</p>
 {:else if !servicesData}
-  <p>Loading...</p>
+  <!-- <p>Loading...</p> -->
+   <SkeltonCard/>
 {:else}
 <section class="bg-full">
+  <Breadcrumbs/>
   <section class="services-section">
+   
     <!-- Main Title -->
     <div class="main-title">
       {#each servicesData.mainTitle as block}
@@ -68,7 +76,7 @@
         <div class="card">
           <!-- Icon as Image -->
           <div class="card-icon">
-            <img src={card.image.asset.url} alt={card.title} />
+            <img src={card.image.asset.url} alt={card.title}  loading="lazy" />
           </div>
           <h3>{card.title}</h3>
           {#each card.description as block}
@@ -103,6 +111,7 @@
 <style>
   .bg-full{
     background-color: #E3F8F8;
+    padding:10px;
   }
   .services-section {
     padding: 2rem;

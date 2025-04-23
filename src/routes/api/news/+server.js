@@ -1,20 +1,20 @@
-import { NEWS_API_KEY, NEWS_API_URL } from '$env/static/private';
-import { slugify } from '$lib/utils';
-export async function GET() {
-  const url = `${NEWS_API_URL}?apikey=${NEWS_API_KEY}&category=business&language=en&q=ecommerce`;
+import { GNEWS_API_KEY } from '$env/static/private';
+import { slugify } from '$lib/utils.js';
 
-  const res = await fetch(url);
+/** @type {import('./$types').RequestHandler} */
+export async function GET() {
+  const res = await fetch(`https://gnews.io/api/v4/search?q=ecommerce&lang=en&apikey=${GNEWS_API_KEY}`);
   const data = await res.json();
 
-  const articles = data.results.map((item) => ({
+  const articles = data.articles.map((item) => ({
     title: item.title,
-    image: item.image_url,
+    image: item.image,
     description: item.description,
-    content: item.content || item.description,
-    slug: slugify(item.title)
+    content: item.content,
+    date: item.publishedAt,
+    url: item.url,
+    slug: slugify(item.title) // Convert title to URL-friendly slug
   }));
 
-  return new Response(JSON.stringify(articles), {
-    headers: { 'Content-Type': 'application/json' }
-  });
+  return new Response(JSON.stringify(articles));
 }

@@ -5,16 +5,6 @@
 /* ---------------------------- */
  
 /* ----------------------- */
-
-
-/* ------------------------ */
-
-
-  /* --------------- */
- 
-  /* ---------------- */
-  
-  /* --------------- */
   /* .lt-section {
     background-color: #E3F8F8;
     padding: 60px 30px;
@@ -94,16 +84,17 @@
   }
 
   .ft-eco-img {
-    width: 40%;
+    width: 90%;
   }
 
   .ft-links {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     list-style-type: none;
     padding: 0;
     cursor: pointer;
+    text-align: left;
   }
 
   .ft-links,
