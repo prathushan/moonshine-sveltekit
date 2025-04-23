@@ -169,8 +169,9 @@
   }
 
   .logo {
-    height: 85px;
-  width: 100px;
+    height: 100px;
+  width:300px;    
+  margin-left: -97px;
   }
 
   .menu {
@@ -580,7 +581,7 @@
   }
 
   .ft-eco-img {
-    width: 40%;
+    width: 90%;
   }
 
   .ft-links {
