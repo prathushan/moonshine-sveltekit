@@ -59,7 +59,7 @@
     {/each}
   </div>
 
-  <a href="/blogs" class="view-all">See all posts →</a>
+  <a href="/blogs" class="view-all">View all →</a>
 </div>
 
 
@@ -197,6 +197,13 @@
 
     .lt-card.small {
       height: auto;
+    }
+  }
+  @media (max-width: 768px) {
+    .lt-title{
+      font-size: 34px;
+    line-height: 40px; 
+    text-align: left;
     }
   }
 </style>
