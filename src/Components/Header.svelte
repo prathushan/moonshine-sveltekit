@@ -23,13 +23,15 @@
 {#if header}
   <header class="header">
     <div class="header-container">
-      <a href="/">
-        <img src={header.logo.asset.url} alt="Logo" class="logo" />
-      </a>
+      <div class="logo-toggle">
+        <a href="/">
+          <img src={header.logo.asset.url} alt="Logo" class="logo" />
+        </a>
 
-      <button class="mobile-menu-toggle" on:click={toggleMenu} aria-label="Toggle menu">
-        ☰
-      </button>
+        <button class="mobile-menu-toggle" on:click={toggleMenu} aria-label="Toggle menu">
+          ☰
+        </button>
+      </div>
 
       <nav class="nav-menu {menuOpen ? 'open' : ''}">
         <ul class="menu">
@@ -67,14 +69,19 @@
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo-toggle {
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    width: 50%;
   }
 
   .logo {
-    height: 85px;
-    width: 100px;
+    width: 40%;
   }
 
   .menu {
@@ -131,7 +138,6 @@
     display: block;
   }
 
-  /* Hide mobile toggle button on desktop */
   .mobile-menu-toggle {
     display: none;
     font-size: 2rem;
@@ -140,22 +146,29 @@
     cursor: pointer;
   }
 
-  /* Responsive styles */
-  @media (max-width: 768px) {
+  /* Desktop-only styles (unchanged layout) */
+  @media (min-width: 769px) {
     .header-container {
-      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
 
+    .nav-menu {
+      display: block !important;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
     .mobile-menu-toggle {
       display: block;
-      margin-left: auto;
     }
 
     .nav-menu {
       width: 100%;
       display: none;
       flex-direction: column;
-      margin-top: 1rem;
     }
 
     .nav-menu.open {
@@ -179,6 +192,9 @@
 
     .menu-item .submenu {
       display: block;
+    }
+    .logo-toggle{
+      width: 100%;
     }
   }
 </style>
