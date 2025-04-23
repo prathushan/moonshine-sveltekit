@@ -3,6 +3,7 @@
   import { client } from "$lib/sanityClient";
   import { footerQuery } from "$lib/queries/Footer";
   import FooterNewsletter from './NewsletterForm.svelte';
+  import { getNewsletterHeadingQuery } from '$lib/queries/newsletterSettings';
   import "../app.css";
 
   let footer = null;

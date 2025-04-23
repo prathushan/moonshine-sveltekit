@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import ContactForm from './Contact-from.svelte';  
-  import SkeltonCard from './SkeltonCard.svelte';
+  // import SkeltonCard from './SkeltonCard.svelte';
   import Breadcrumbs from './Breadcrumbs.svelte';
+  import FaqAccordion from './FaqAccordion.svelte';
 
   let contactData: any = null;
 
@@ -10,10 +11,7 @@
     try {
       const response = await fetch('/api/contact');
       const data = await response.json();
-
-      setTimeout(() => {
         contactData = data;
-      }, 600);
     } catch (err) {
       console.error('Failed to fetch contact data:', err);
     }
@@ -21,6 +19,8 @@
 </script>
 
 {#if contactData}
+<div class="full-con">
+  <Breadcrumbs/>
   <div class="main">
 
      
@@ -29,10 +29,16 @@
 
     <div class="bio">
       <!-- <Breadcrumbs /> -->
-      <h1>{contactData.title}</h1>
-      <p class="description">{contactData.description}</p>
+      <!-- <h1>{contactData.title}</h1>
+      <p class="description">{contactData.description}</p> -->
 
-      {#if contactData.address}
+     <FaqAccordion />
+    </div>
+    <!-- Contact Form Section -->
+    <div class="contact">
+      <ContactForm />
+      <div class="info-blk">
+        {#if contactData.address}
         <div class="info-block">
           <img src={contactData.address.icon.asset.url} alt="Address Icon" />
           <div>
@@ -65,34 +71,36 @@
           </div>
         </div>
       {/if}
-    </div>
-    <!-- Contact Form Section -->
-    <div class="contact">
-      <ContactForm />
+      </div>
     </div>
 
    
   </div>
+  </div>
 {:else}
-  <SkeltonCard />
+  <p>Loading...</p>
 {/if}
 
 <style>
+  .full-con{
+    background: linear-gradient(115deg, #FDF3EA 50%,#e8f8f9 50% );
+    padding:10px;
+  }
+
   .main {
-    /* display: flex;
-    justify-content: space-around;
-    align-items: flex-start; */
     display:grid;
     grid-template-columns: 55%  45%;
 
     height: 80vh;
-    background: linear-gradient(115deg, #FDF3EA 50%,#e8f8f9 50% );
+    
     font-family: 'Inter', sans-serif;
     padding: 3rem;
   }
+
   .bio{
-    max-width:500px;
-    margin:0 auto;
+    max-width:100%;
+    /* margin:0 auto; */
+    width:75%;
    
    
   }
@@ -104,17 +112,21 @@
     /* color: #EEEEEE; */
     margin:0 auto;
   }
-
-  .bio h1 {
+.info-blk{
+  display:flex;
+  flex-direction: column;
+  margin-top:10%;
+}
+  /* .bio h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    /* color: #fff; */
+    color: #fff;
   }
 
   .description {
     line-height: 1.8em;
     margin-bottom: 1.5rem;
-  }
+  } */
 
   .info-block {
     display: flex;
