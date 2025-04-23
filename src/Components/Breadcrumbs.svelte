@@ -27,7 +27,7 @@
       <li><a href="/">Home</a></li>
       {#each $breadcrumbs as crumb, i}
         <li>
-          <span class="separator">→</span>
+          <span class="separator">/</span>
           {#if i < $breadcrumbs.length - 1}
             <a href={crumb.path}>{crumb.name}</a>
           {:else}
