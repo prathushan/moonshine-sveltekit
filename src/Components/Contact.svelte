@@ -1,20 +1,28 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import ContactFrom from './Contact-from.svelte';  
+  import SkeltonCard from './SkeltonCard.svelte';
+  import Breadcrumbs from './Breadcrumbs.svelte';
     let contactData: any = null;
   
     onMount(async () => {
-      try {
-        const response = await fetch('/api/contact');
-        contactData = await response.json();
-      } catch (err) {
-        console.error('Failed to fetch contact data:', err);
-      }
-    });
+  try {
+    const response = await fetch('/api/contact');
+    const data = await response.json();
+
+    // Simulate minimum skeleton time (e.g., 600ms)
+    setTimeout(() => {
+      contactData = data;
+    }, 600);
+  } catch (err) {
+    console.error('Failed to fetch contact data:', err);
+  }
+});
   </script>
   
   {#if contactData}
     <section class="contact-section">
+      <Breadcrumbs/>
       <h1>{contactData.title}</h1>
       <p class="description">{contactData.description}</p>
   
@@ -59,7 +67,8 @@
       </div>
     </section>
   {:else}
-    <p>Loading...</p>
+    <!-- <p>Loading...</p> -->
+     <SkeltonCard/>
   {/if}
   
   <style>

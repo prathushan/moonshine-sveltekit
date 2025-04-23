@@ -70,7 +70,7 @@
         {#each duplicatedTestimonials as testimonial}
           <div class="ts-card">
             <div class="ts-user">
-              <img class="ts-avatar" src={testimonial.image.asset.url} alt={testimonial.name} />
+              <img class="ts-avatar" src={testimonial.image.asset.url} alt={testimonial.name} loading="lazy"  />
               <div class="ts-info">
                 <h3>{testimonial.name}</h3>
                 <p class="ts-handle">{testimonial.twitterHandle}</p>

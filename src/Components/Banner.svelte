@@ -51,7 +51,9 @@
 
   <div class="hero-image desktop-only">
     {#if banner.images && banner.images[0]?.asset?.url}
-      <img src={banner.images[0].asset.url} alt="" />
+
+      <img  src={banner.images[0].asset.url} alt=""  loading="lazy"  />
+
     {/if}
   </div>
 </section>

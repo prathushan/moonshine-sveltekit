@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import Breadcrumbs from '../../Components/Breadcrumbs.svelte';
   let blogs = [];
 
   onMount(async () => {
@@ -12,6 +13,7 @@
 </script>
 
 <div class="blog-section">
+  <Breadcrumbs/>
   <h1 class="blog-heading">
     {#each 'Latest trends & insights'.split(' ') as word, i}
       {#if word.toLowerCase().includes('insights')}
@@ -31,7 +33,7 @@
     {#each blogs.slice(0, 3) as blog, i}
       <a href={`/latest-trends/${blog.slug.current}`} class={`blog-card ${i === 0 ? 'featured-large' : 'featured-small'}`}>
         <div class="blog-image-wrapper">
-          <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" />
+          <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" loading="lazy"  />
           <div class="blog-meta">
             <span class="blog-date">{formatDate(blog.publishedAt)}</span>
           </div>
@@ -51,7 +53,7 @@
       {#each blogs.slice(3) as blog}
         <a href={`/latest-trends/${blog.slug.current}`} class="blog-card blog-card-extra">
           <div class="blog-image-wrapper">
-            <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" />
+            <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image"  loading="lazy" />
             <div class="blog-meta">
               <span class="blog-date">{formatDate(blog.publishedAt)}</span>
             </div>
@@ -108,7 +110,7 @@
     transform: scale(1.1);
   }
   .blog-section {
-    padding: 60px 30px;
+    padding: 10px 30px 60px 30px;
     background-color: #f9f9f9;
     font-family: inter;
    

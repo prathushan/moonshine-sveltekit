@@ -30,7 +30,7 @@
       <div class="cards-container">
         {#each data.cards as card}
           <div class="card">
-            <img src={card.cardImage.asset.url} alt={card.cardTitle} class="card-image" />
+            <img src={card.cardImage.asset.url} alt={card.cardTitle} class="card-image" loading="lazy"  />
             <p class="card-title">{card.cardTitle}</p>
           </div>
         {/each}
