@@ -60,6 +60,7 @@
   color:#fff;
   cursor: pointer;
   margin-left:10px;
+  text-transform: uppercase;
     }
     input {
       width: 100%;
