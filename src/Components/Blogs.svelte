@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import Breadcrumbs from './Breadcrumbs.svelte';
   export let limit = 3;
 
   let blogs = [];

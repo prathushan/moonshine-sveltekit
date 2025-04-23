@@ -170,14 +170,14 @@
     gap: 30px;
   }
 
-  .icon-link img {
+  /* .icon-link img {
     transition: transform 0.3s ease;
-    filter: grayscale(100%) brightness(0) invert(1); /* Black color for icons */
+    filter: grayscale(100%) brightness(0) invert(1);
   }
 
   .icon-link img:hover {
     transform: scale(1.2);
-  }
+  } */
 
   .ft-bottom {
     text-align: center;

@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import ContactFrom from './Contact-from.svelte';  
   import SkeltonCard from './SkeltonCard.svelte';
+  import Breadcrumbs from './Breadcrumbs.svelte';
     let contactData: any = null;
   
     onMount(async () => {
@@ -21,6 +22,7 @@
   
   {#if contactData}
     <section class="contact-section">
+      <Breadcrumbs/>
       <h1>{contactData.title}</h1>
       <p class="description">{contactData.description}</p>
   

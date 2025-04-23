@@ -75,11 +75,14 @@
   </style> -->
   
   <script>
+  import Breadcrumbs from "../../../Components/Breadcrumbs.svelte";
+
     export let data;
     const article = data.article;
   </script>
   
   <article class="news-article">
+    <Breadcrumbs/>
     <div class="full-con">
     <h1>{article.title}</h1>
     <p class="date"><em>{new Date(article.date).toLocaleString()}</em></p>
@@ -123,6 +126,7 @@ background-image:
   radial-gradient(circle, #E0C3FC 2px, transparent 2px);  
 background-size: 10px 10px;  
 background-position: 0px 0px, 5px 5px; 
+padding:10px;
 
   }
   .full-con{

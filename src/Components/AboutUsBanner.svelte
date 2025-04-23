@@ -1,4 +1,6 @@
 <script>
+  import Breadcrumbs from "./Breadcrumbs.svelte";
+
   export let bannerData;
 
   const moonPositions = [
@@ -10,6 +12,7 @@
 </script>
 
 <section class="about-banner">
+  <Breadcrumbs/>
   <!-- Top Section: Heading + Description -->
   <div class="text-section">
     <h1>{bannerData?.heading}</h1>
@@ -42,6 +45,7 @@
      position: relative;
     width: 100%;
     background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
+    padding:10px;
   }
 
   .text-section {

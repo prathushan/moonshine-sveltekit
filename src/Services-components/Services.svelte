@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { servicesQuery } from '$lib/queries/Services';
   import SkeltonCard from '../Components/SkeltonCard.svelte';
+  import Breadcrumbs from '../Components/Breadcrumbs.svelte';
 
   let servicesData: any = null;
   let error = '';
@@ -28,7 +29,9 @@
    <SkeltonCard/>
 {:else}
 <section class="bg-full">
+  <Breadcrumbs/>
   <section class="services-section">
+   
     <!-- Main Title -->
     <div class="main-title">
       {#each servicesData.mainTitle as block}
@@ -108,6 +111,7 @@
 <style>
   .bg-full{
     background-color: #E3F8F8;
+    padding:10px;
   }
   .services-section {
     padding: 2rem;
