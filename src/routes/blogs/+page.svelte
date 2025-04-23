@@ -13,8 +13,18 @@
 
 <div class="blog-section">
   <h1 class="blog-heading">
-    Latest trends & insights
+    {#each 'Latest trends & insights'.split(' ') as word, i}
+      {#if word.toLowerCase().includes('insights')}
+        <span style="color: #0C9A8B; font-family: 'Covered By Your Grace', cursive;">
+          {word}
+        </span>
+      {:else}
+        {word}
+      {/if}
+      {i !== 'Latest trends & insights'.split(' ').length - 1 ? ' ' : ''}
+    {/each}
   </h1>
+  
 
   <!-- Featured Blogs -->
   <div class="featured-grid">
@@ -106,9 +116,9 @@
 
   .blog-heading {
     text-align: center;
-    font-size: 20px;
+    font-size: 60px;
     font-weight: bold;
-    margin-bottom: 2.5rem;
+    /* margin-bottom: 2.5rem; */
     color: #2e2f35;
   }
 
