@@ -51,7 +51,7 @@
 <style>
 
 .div-with-pattern {
-  background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
+  background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #cef5e6 100%);
   padding:10px 20px;
 }
 
@@ -66,9 +66,6 @@
   position: relative;
   padding-bottom:250px;
   background: #fff;
-  /* background: linear-gradient(to bottom, #e8f8f9 0%, #E0C3FC 100%),
-            url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"%3E%3Ccircle cx="3" cy="3" r="1" fill="%2300FF00" opacity="0.2" /%3E%3C/svg%3E') repeat; */
-            /* background-color: #e8f8f9;  */
 background-image: 
   radial-gradient(circle, #e8f8f9 3px, transparent 2px);  /* Green Dots */
 background-size: 20px 20px;  /* Dot size and spacing */
