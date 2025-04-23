@@ -33,7 +33,7 @@
 
     <div class="cta-row mobile-order">
       {#if banner.buttonText && banner.buttonLink}
-        <a class="btn" href={banner.buttonLink} target="_blank" rel="noopener noreferrer">
+        <a class="btn" href={banner.buttonLink}>
           {banner.buttonText}
         </a>
       {/if}
