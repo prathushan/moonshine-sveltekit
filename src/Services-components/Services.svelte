@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { servicesQuery } from '$lib/queries/Services';
+  import SkeltonCard from '../Components/SkeltonCard.svelte';
 
   let servicesData: any = null;
   let error = '';
@@ -9,7 +10,10 @@
     try {
       const res = await fetch('/api/services'); // updated to match your actual API
       const data = await res.json();
-      servicesData = data;
+      
+      setTimeout(() => {
+        servicesData = data;
+    }, 600);
     } catch (err) {
       console.error(err);
       error = 'Failed to load services.';
@@ -20,7 +24,8 @@
 {#if error}
   <p>{error}</p>
 {:else if !servicesData}
-  <p>Loading...</p>
+  <!-- <p>Loading...</p> -->
+   <SkeltonCard/>
 {:else}
 <section class="bg-full">
   <section class="services-section">
