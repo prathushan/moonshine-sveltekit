@@ -70,9 +70,9 @@
 
   .text-section p {
     color: #1d2d3c;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 30px;
     font-family:inter;
   }
 
