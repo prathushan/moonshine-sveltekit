@@ -50,10 +50,13 @@
 
 <style>
 
+
 .div-with-pattern {
   background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #cef5e6 100%);
   padding:10px 20px;
 }
+
+@media(min-width:750px){
 
 
 .steps-layout {
@@ -103,11 +106,13 @@ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 .step-3 {
   transform: translateY(0);
 }
+}
 .news-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
+
 .news-date-container {
   display: flex;
   align-items: center;
@@ -115,6 +120,7 @@ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   color: #6b7280;
   margin-bottom: 0.5rem;
 }
+
 
 .calendar-icon {
   width: 16px;
