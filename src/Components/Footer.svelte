@@ -38,7 +38,7 @@
       <div class="ft-main-links">
         <!-- Company Links Section -->
         <div class="ft-company">
-          <h3>COMPANY</h3>
+          <h3  class="soc-head">Company</h3>
           <ul class="ft-links">
             {#each footer.companyLinks as link}
               <li><a href={link.url} target="_blank">{link.label}</a></li>
@@ -48,23 +48,23 @@
 
         <!-- Social Links Section -->
         <div class="ft-social">
-          <h3 class="soc-head">SOCIAL</h3>
+          <h3 class="soc-head">Social</h3>
           <div class="social-icons">
            <div class="social-icons">
           <div class="social-row">
             <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <img src="/facebook.svg" alt="Facebook" width="40" height="40" />
+              <img src="/facebook.svg" alt="Facebook" width="50" height="50" />
             </a>
             <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-              <img src="/twitter.svg" alt="Twitter" width="40" height="40" />
+              <img src="/twitter.svg" alt="Twitter" width="50" height="50" />
             </a>
           </div>
           <div class="social-row">
             <a href="https://tiktok.com" target="_blank" aria-label="LinkedIn">
-              <img src="/tik.webp" alt="Tiktok" width="40" height="40" />
+              <img src="/tik.webp" alt="Tiktok" width="50" height="50" />
             </a>
             <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <img src="/insta.png" alt="Instagram" width="40" height="40" />
+              <img src="/insta.png" alt="Instagram" width="50" height="50" />
             </a>
           </div>
         </div> 
@@ -74,7 +74,7 @@
 
       <div class="ft-contact ft-col">
         <div>
-          <h3>CONTACT</h3>
+          <h3 class="soc-head">Contact</h3>
           <p>{footer.contactEmail}</p>
           <p>{footer.contactNote}</p>
         </div>
@@ -150,11 +150,11 @@
 
   .ft-social {
     margin-left:20px;
-    margin-right:20px;
+    margin-right:80px;
   }
   .soc-head {
-    margin-top: 10px;
-    font-size: 12px;
+    margin-top: 12px;
+    font-size: 16px;
     font-family: 'Inter';
 }
   .social-icons {
