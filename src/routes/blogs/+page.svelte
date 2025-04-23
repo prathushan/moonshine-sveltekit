@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import Breadcrumbs from '../../Components/Breadcrumbs.svelte';
   let blogs = [];
 
   onMount(async () => {
@@ -12,6 +13,7 @@
 </script>
 
 <div class="blog-section">
+  <Breadcrumbs/>
   <h1 class="blog-heading">
     {#each 'Latest trends & insights'.split(' ') as word, i}
       {#if word.toLowerCase().includes('insights')}
@@ -108,7 +110,7 @@
     transform: scale(1.1);
   }
   .blog-section {
-    padding: 60px 30px;
+    padding: 10px 30px 60px 30px;
     background-color: #f9f9f9;
     font-family: inter;
    

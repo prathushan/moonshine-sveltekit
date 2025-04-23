@@ -1,7 +1,10 @@
  <script>
+  import Breadcrumbs from "../../Components/Breadcrumbs.svelte";
+
   export let data;
 </script>
 <div class="div-with-pattern ">
+  <Breadcrumbs/>
 <div class="steps-layout">
   {#if data.articles.length === 0}
     <p>No articles available. Please check back later.</p>
@@ -49,7 +52,7 @@
 
 .div-with-pattern {
   background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
-  padding:10% 20px;
+  padding:10px 20px;
 }
 
 

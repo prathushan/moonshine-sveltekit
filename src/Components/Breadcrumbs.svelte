@@ -58,7 +58,7 @@
     }
   
     .breadcrumb a {
-      color: blue;
+      color: #ff6600;
       text-decoration: underline;
     }
   
