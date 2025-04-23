@@ -76,7 +76,7 @@
         <div class="card">
           <!-- Icon as Image -->
           <div class="card-icon">
-            <img src={card.image.asset.url} alt={card.title} />
+            <img src={card.image.asset.url} alt={card.title}  loading="lazy" />
           </div>
           <h3>{card.title}</h3>
           {#each card.description as block}

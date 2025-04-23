@@ -13,7 +13,7 @@
   <h2 class="pos-abs">Latest News</h2>
   {#each data.articles as article, i}
     <div class="step-card {i % 3 === 0 ? 'step-1' : ''} {i % 3 === 1 ? 'step-2' : ''} {i % 3 === 2 ? 'step-3' : ''}">
-      <img src={article.image} alt={article.title} class="news-image" />
+      <img src={article.image} alt={article.title} class="news-image" loading="lazy"  />
       <div class="news-content">
         <div class="news-date-container">
           <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
