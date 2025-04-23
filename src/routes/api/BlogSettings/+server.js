@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import client from '$lib/sanityClient';
+import { client } from '$lib/sanityClient';
 import { blogSettingsQuery } from '$lib/queries/BlogSettings';
 
 export async function GET() {
