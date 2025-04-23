@@ -6,6 +6,7 @@
   import "../app.css";
 
   let footer = null;
+  let heading = 'Newsletter';
 
   onMount(async () => {
     try {
@@ -13,11 +14,7 @@
     } catch (err) {
       console.error("Failed to fetch footer:", err);
     }
-  });
 
-  let heading = 'Newsletter';
-
-  onMount(async () => {
     try {
       const res = await client.fetch(getNewsletterHeadingQuery);
       heading = res?.heading || heading;
@@ -33,12 +30,12 @@
       <div class="ft-eco ft-col">
         <img class="ft-eco-img" src={footer.ecoBadge?.asset?.url} alt="Eco Friendly" />
         <p class="logo-head">{footer.ecoText}</p>
-      </div >
+      </div>
 
       <div class="ft-main-links">
         <!-- Company Links Section -->
         <div class="ft-company">
-          <h3  class="soc-head">Company</h3>
+          <h3 class="soc-head">Company</h3>
           <ul class="ft-links">
             {#each footer.companyLinks as link}
               <li><a href={link.url} target="_blank">{link.label}</a></li>
@@ -50,24 +47,20 @@
         <div class="ft-social">
           <h3 class="soc-head">Social</h3>
           <div class="social-icons">
-           <div class="social-icons">
-          <div class="social-row">
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <img src="/facebook.svg" alt="Facebook" width="50" height="50"  loading="lazy" />
-            </a>
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-              <img src="/twitter.svg" alt="Twitter" width="50" height="50"  loading="lazy" />
-            </a>
-          </div>
-          <div class="social-row">
-            <a href="https://tiktok.com" target="_blank" aria-label="LinkedIn">
-              <img src="/tik.webp" alt="Tiktok" width="50" height="50"  loading="lazy" />
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <img src="/insta.png" alt="Instagram" width="50" height="50"  loading="lazy" />
-            </a>
-          </div>
-        </div> 
+            {#each footer.socialLinks as link, i}
+              {#if i % 2 === 0}
+                <div class="social-row">
+                  <a href={link.url} target="_blank" aria-label={link.platform}>
+                    <img src={link.icon.asset.url} alt={link.platform} width="50" height="50" loading="lazy" />
+                  </a>
+                  {#if footer.socialLinks[i + 1]}
+                    <a href={footer.socialLinks[i + 1].url} target="_blank" aria-label={footer.socialLinks[i + 1].platform}>
+                      <img src={footer.socialLinks[i + 1].icon.asset.url} alt={footer.socialLinks[i + 1].platform} width="50" height="50" loading="lazy" />
+                    </a>
+                  {/if}
+                </div>
+              {/if}
+            {/each}
           </div>
         </div>
       </div>
@@ -101,15 +94,12 @@
 {/if}
 
 <style>
-
-  .logo-head{
-        margin-left: 30px;
-
+  .logo-head {
+    margin-left: 30px;
   }
 
-
-  .ft-company,.ft-social,.ft-contact {
-        margin-top: 30px;
+  .ft-company, .ft-social, .ft-contact {
+    margin-top: 30px;
   }
 
   .ft-root {
@@ -131,7 +121,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 80px;  /* Space between the links section */
+    gap: 80px;
   }
 
   .ft-company {
@@ -158,14 +148,16 @@
   }
 
   .ft-social {
-    margin-left:20px;
-    margin-right:80px;
+    margin-left: 20px;
+    margin-right: 80px;
   }
+
   .soc-head {
     margin-top: 12px;
     font-size: 16px;
     font-family: 'Inter';
-}
+  }
+
   .social-icons {
     display: flex;
     flex-direction: column;
@@ -179,21 +171,13 @@
     gap: 30px;
   }
 
-  /* .icon-link img {
-    transition: transform 0.3s ease;
-    filter: grayscale(100%) brightness(0) invert(1);
-  }
-
-  .icon-link img:hover {
-    transform: scale(1.2);
-  } */
-
   .ft-bottom {
     text-align: center;
     margin-top: 40px;
   }
 
-  .ft-btn-primary, .ft-btn-secondary {
+  .ft-btn-primary,
+  .ft-btn-secondary {
     margin: 10px;
     padding: 10px 20px;
     border: none;
@@ -210,5 +194,70 @@
     background-color: transparent;
     color: #ff6600;
     border: 2px solid #ff6600;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .ft-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ft-main-links {
+      gap: 40px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .ft-social {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .social-icons {
+      gap: 20px;
+    }
+
+    .ft-btn-primary,
+    .ft-btn-secondary {
+      width: 100%; /* Make buttons take full width on mobile */
+      padding: 12px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ft-container {
+      padding: 20px;
+    }
+
+    .ft-main-links {
+      gap: 20px;
+      display: block;
+    }
+
+    .ft-bottom {
+      margin-top: 30px;
+    }
+
+    .ft-btn-primary,
+    .ft-btn-secondary {
+      padding: 12px 20px;
+    }
+    .ft-eco-img{
+      width: 100%;
+    }
+    .logo-head{
+      margin-left: 0;
+    }
+    .ft-links{
+      gap: 10px;
+      display: grid;
+      grid-template-columns: 6fr 6fr;
+    }
+    .ft-company, .ft-social, .ft-contact{
+      margin-top: 0;
+    }
+    .social-row, .social-icons{
+      gap: 10px;
+    }
   }
 </style>

@@ -4,7 +4,11 @@ export const footerQuery = `
     ecoBadge { asset->{url} },
     ecoText,
     companyLinks,
-     socialLinks,
+    socialLinks[] {
+      platform,
+      url,
+      icon { asset->{url} }
+    },
     contactEmail,
     contactNote,
     companyLogo { asset->{url} },
