@@ -48,22 +48,26 @@
 
         <!-- Social Links Section -->
         <div class="ft-social">
-          <h3>SOCIAL</h3>
+          <h3 class="soc-head">SOCIAL</h3>
           <div class="social-icons">
-            <div class="social-row">
-              {#each footer.socialLinks.slice(0, 2) as link}
-                <a href={link.url} target="_blank" class="icon-link" aria-label={link.platform}>
-                  <img src={`/icons/${link.platform}.svg`} alt={link.platform} width="24" height="24"/>
-                </a>
-              {/each}
-            </div>
-            <div class="social-row">
-              {#each footer.socialLinks.slice(2, 4) as link}
-                <a href={link.url} target="_blank" class="icon-link" aria-label={link.platform}>
-                  <img src={`/icons/${link.platform}.svg`} alt={link.platform} width="24" height="24"/>
-                </a>
-              {/each}
-            </div>
+           <div class="social-icons">
+          <div class="social-row">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <img src="/facebook.svg" alt="Facebook" width="40" height="40" />
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+              <img src="/twitter.svg" alt="Twitter" width="40" height="40" />
+            </a>
+          </div>
+          <div class="social-row">
+            <a href="https://tiktok.com" target="_blank" aria-label="LinkedIn">
+              <img src="/tik.webp" alt="Tiktok" width="40" height="40" />
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <img src="/insta.png" alt="Instagram" width="40" height="40" />
+            </a>
+          </div>
+        </div> 
           </div>
         </div>
       </div>
@@ -97,9 +101,11 @@
 {/if}
 
 <style>
+
+  
   .ft-root {
     background-color: #f8f8f8;
-    padding: 40px 0;
+    padding: 40px 40px;
   }
 
   .ft-container {
@@ -116,7 +122,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40px;  /* Space between the links section */
+    gap: 80px;  /* Space between the links section */
   }
 
   .ft-company {
@@ -130,7 +136,7 @@
   }
 
   .ft-links li {
-    margin: 10px 0;
+    margin: 5px 0;
   }
 
   .ft-links a {
@@ -143,20 +149,25 @@
   }
 
   .ft-social {
-    text-align: center;
+    margin-left:20px;
+    margin-right:20px;
   }
-
+  .soc-head {
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: 'Inter';
+}
   .social-icons {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
   }
 
   .social-row {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
   }
 
   .icon-link img {
