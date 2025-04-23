@@ -104,13 +104,13 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: #1a1a1a;
-    font-family:inter;
+     font-family: 'Covered By Your Grace', cursive;
   }
 
   .highlight {
     color: #00b386;
     font-weight: 700;
-     font-size: 28px;
+    font-size: 28px;
   }
 
   p {
