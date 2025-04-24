@@ -82,6 +82,21 @@
 {/if}
 
 <style>
+  @media(max-width:480px){
+    .full-con{
+    background: linear-gradient(-180deg, #FDF3EA 50%,#e8f8f9 50% );
+    padding:10px;
+  }
+  .bio{
+   height:50%;
+   
+   
+  }
+  .contact {
+   height:50%;
+  }
+  }
+  @media(min-width:750px){
   .full-con{
     background: linear-gradient(115deg, #FDF3EA 50%,#e8f8f9 50% );
     padding:10px;
@@ -90,16 +105,12 @@
   .main {
     display:grid;
     grid-template-columns: 55%  45%;
-
     height: 80vh;
-    
-    font-family: 'Inter', sans-serif;
     padding: 3rem;
   }
 
   .bio{
     max-width:100%;
-    /* margin:0 auto; */
     width:75%;
    
    
@@ -109,7 +120,6 @@
     max-width: 450px;
     margin-top: 5vh;
     width:400px;
-    /* color: #EEEEEE; */
     margin:0 auto;
   }
 .info-blk{
@@ -117,16 +127,6 @@
   flex-direction: column;
   margin-top:10%;
 }
-  /* .bio h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-  }
-
-  .description {
-    line-height: 1.8em;
-    margin-bottom: 1.5rem;
-  } */
 
   .info-block {
     display: flex;
@@ -134,7 +134,13 @@
     gap: 1rem;
     margin-bottom: 1.25rem;
   }
-
+  .contact {
+    margin-top: 5vh;
+  }
+  }
+  .main {  
+    font-family: 'Inter', sans-serif;
+  }
   .info-block img {
     width: 32px;
     height: 32px;
@@ -144,33 +150,19 @@
   .info-block h3 {
     font-size: 1rem;
     margin: 0 0 0.25rem 0;
-    /* color: #CA8D6E; */
   }
 
   .info-block p {
     margin: 0;
     font-size: 0.95rem;
-    /* color: #EEEEEE; */
   }
-
-  /* .bio-link {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 1rem;
-    display: block;
-    text-decoration: none;
-    color: #EEEEEE;
-    margin-bottom: 0.25em;
-  } */
 
   .ph-dec, .mail-dec {
     color: #000;
     text-decoration: none;
   }
 
-  .contact {
-    margin-top: 5vh;
-  }
+
 
   @media (max-width: 768px) {
     .main {
@@ -179,7 +171,7 @@
       text-align: center;
     }
 
-    .bio, .contact {
+.contact {
       max-width: 90%;
     }
 

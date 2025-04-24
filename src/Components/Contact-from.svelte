@@ -122,11 +122,17 @@ fieldset {
     margin-bottom: 1em;
    
   }
+  @media(max-width:480px){
+    .legend{
+      margin-top:40px;
+    }
+  }
   form fieldset {
     border: none;
     margin-bottom: 0.75em;
     padding: 0.25em 0;
     position: relative;
+    font-family: 'Inter',serif;
   }
   input, textarea {
     width: 100%;

@@ -76,6 +76,7 @@
       margin-bottom: 1rem;
     }
     .accordion-question {
+      font-family:'Inter',serif;
       width: 100%;
       background: none;
       border: none;
@@ -104,6 +105,11 @@
     .extra-fields li {
       font-size: 0.9rem;
       color: #444;
+    }
+    @media(max-width:480px){
+      .accordion-answer {
+      text-align: left;
+    }
     }
   </style>
   

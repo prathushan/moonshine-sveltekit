@@ -83,5 +83,16 @@
         width:80%;
         text-align: center;
     }
+
+    @media(max-width:480px){
+      form{
+    flex-direction: column;
+    max-width: 100%;
+    }
+    .news-letter-heading{
+        width:100%;
+  
+    }
+    }
   </style>
   

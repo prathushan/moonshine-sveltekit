@@ -106,14 +106,35 @@
 {/if}
 
 <style>
+
+
+
+
+
+
+
+
+
   .bg-full{
-    background-color: #E3F8F8;
-    padding:10px;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #cef5e6 100%);
+  padding:10px 10px 50px 10px;
+   
   }
   .services-section {
-    padding: 2rem;
-    max-width: 1200px;
+    
+    padding: 60px;
+    max-width: 1300px;
     margin: 0 auto;
+    box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+
+background-image: 
+  radial-gradient(circle, #e8f8f9 3px, transparent 2px);  /* Green Dots */
+background-size: 20px 20px;  /* Dot size and spacing */
+background-position: 0px 0px, 5px 5px; 
+background-color: #fff;
+border-radius:20px;
    
   }
 
@@ -152,7 +173,7 @@
   }
 
   .card {
-    background: white;
+    /* background: white; */
     border: 1px solid #009387;
     border-radius: 16px;
     overflow: hidden;
