@@ -70,6 +70,7 @@
     font-weight: 500;
     margin-bottom: 1rem;
     font-family:inter;
+    
   }
 
   .text-section p {
@@ -86,5 +87,13 @@
     background-position: center;
     filter: grayscale(100%);
     position: relative;
+  }
+  @media (max-width: 768px) {
+    .text-section{
+      text-align: left;
+    }
+    .text-section h1{
+      font-size: 34px;
+    }
   }
 </style>

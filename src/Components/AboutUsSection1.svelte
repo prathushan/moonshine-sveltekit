@@ -189,5 +189,14 @@
       width: 16px;
       height: 16px;
     }
+    .text-content{
+      text-align: left;
+    }
+    .text-content h2{
+      font-size: 34px;
+    }
+    .about-section{
+      padding: 0rem 2rem;
+    }
   }
 </style>
