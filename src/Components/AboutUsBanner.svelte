@@ -70,6 +70,7 @@
     font-weight: 500;
     margin-bottom: 1rem;
     font-family:inter;
+    
   }
 
   .text-section p {
@@ -87,6 +88,7 @@
     filter: grayscale(100%);
     position: relative;
   }
+
 
 
 /* Mobile (max-width: 767px) */
@@ -121,13 +123,13 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .text-section h1 {
     font-size: 40px;
-    text-align: center;
+    text-align:left;
   }
 
   .text-section p {
     font-size: 18px;
     line-height: 28px;
-    text-align: center;
+    text-align:left;
   }
 
   .image-section {
