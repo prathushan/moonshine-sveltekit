@@ -3,6 +3,7 @@
   import { client } from "$lib/sanityClient";
   import { footerQuery } from "$lib/queries/Footer";
   import FooterNewsletter from './NewsletterForm.svelte';
+  import { getNewsletterHeadingQuery } from '$lib/queries/newsletterSettings';
   import "../app.css";
 
   let footer = null;
@@ -161,7 +162,7 @@
   .social-icons {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
   }
 

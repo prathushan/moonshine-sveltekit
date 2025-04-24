@@ -217,12 +217,12 @@
     margin: 0; 
     text-align: left;
   }
-  .ic-title{
+  /* .ic-title{
     font-size: 32px;
     line-height: 40px;
     margin: 0; 
     text-align: left;
-  }
+  } */
 
   .oe-wrapper {
     padding: 20px; 

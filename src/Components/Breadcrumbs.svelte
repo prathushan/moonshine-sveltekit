@@ -27,7 +27,7 @@
       <li><a href="/">Home</a></li>
       {#each $breadcrumbs as crumb, i}
         <li>
-          <span class="separator">→</span>
+          <span class="separator">/</span>
           {#if i < $breadcrumbs.length - 1}
             <a href={crumb.path}>{crumb.name}</a>
           {:else}
@@ -61,10 +61,16 @@
         color: #009387;
       text-decoration: underline;
     }
+    .breadcrumb a::first-letter {
+  text-transform: uppercase;
+}
   
     [aria-current="page"] {
-      font-weight: bold;
+
       color: black;
     }
+    [aria-current="page"]::first-letter {
+  text-transform: uppercase;
+}
   </style>
   

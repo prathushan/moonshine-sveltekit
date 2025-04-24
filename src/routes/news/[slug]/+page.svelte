@@ -119,28 +119,24 @@
 
   <style>
   .news-article {
+  background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #cef5e6 100%);
+  padding:10px 20px;
 
-    background-color: #e8f8f9; 
-background-image: 
-  radial-gradient(circle, #e8f8f9 2px, transparent 2px),  
-  radial-gradient(circle, #E0C3FC 2px, transparent 2px);  
-background-size: 10px 10px;  
-background-position: 0px 0px, 5px 5px; 
-padding:10px;
 
   }
   .full-con{
     max-width: 800px;
     margin: 1rem auto;
     padding: 2rem;
-    /* background: linear-gradient(135deg, rgba(232, 248, 249, 0.6), rgba(255, 255, 255, 0.3)); */
-    /* backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); */
-    /* border-radius: 1rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); */
     color: #222;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    background-color: #fff;
+background-image: 
+  radial-gradient(circle, #e8f8f9 3px, transparent 2px);  /* Green Dots */
+background-size: 20px 20px;  /* Dot size and spacing */
+background-position: 0px 0px, 5px 5px; 
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 
 
   }

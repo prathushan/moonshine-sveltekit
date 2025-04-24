@@ -57,8 +57,10 @@
   border-right: 4px solid black;
   border-bottom: 6px solid black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  color:#fff;
   cursor: pointer;
   margin-left:10px;
+  text-transform: uppercase;
     }
     input {
       width: 100%;
