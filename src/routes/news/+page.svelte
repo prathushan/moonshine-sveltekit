@@ -53,7 +53,7 @@
 
 .div-with-pattern {
   background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #cef5e6 100%);
-  padding:10px 20px;
+  padding:10px 20px 50px 20px;
 }
 
 @media(min-width:750px){
@@ -74,6 +74,7 @@ background-image:
 background-size: 20px 20px;  /* Dot size and spacing */
 background-position: 0px 0px, 5px 5px; 
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+border-radius:20px;
 }
 .pos-abs{
   position:absolute;
@@ -85,15 +86,7 @@ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Card base styling */
-.step-card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-}
+
 
 .step-1 {
   transform: translateY(220px);
@@ -106,6 +99,21 @@ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 .step-3 {
   transform: translateY(0);
 }
+}
+@media(max-width:480px){
+  .step-card {
+    margin-top:15px;
+    margin-bottom:15px;
+  }
+}
+.step-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
 }
 .news-image {
   width: 100%;

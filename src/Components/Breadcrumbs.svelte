@@ -40,6 +40,7 @@
   
   <style>
     .breadcrumb {
+      font-family:'Inter',serif;
       display: flex;
       list-style: none;
       padding: 0;

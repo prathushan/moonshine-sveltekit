@@ -24,7 +24,7 @@
     <style>
       .full-con{
         background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #cef5e6 100%);
-        padding:10px 20px;
+        padding:10px 20px 40px 20px;
       }
       .blog-post {
         max-width: 700px;
@@ -36,6 +36,7 @@
   background-size: 20px 20px;  /* Dot size and spacing */
   background-position: 0px 0px, 5px 5px; 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius:20px;
       }
     
       .main-image {
