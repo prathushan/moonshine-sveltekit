@@ -34,7 +34,8 @@
           src={footer.ecoBadge?.asset?.url}
           alt="Eco Friendly"
         />
-        <p class="logo-head">{footer.ecoText}</p>
+        <!-- <p class="logo-head"></p> -->
+        <!-- {footer.ecoText} -->
       </div>
 
       <div class="ft-main-links">

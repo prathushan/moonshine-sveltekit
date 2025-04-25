@@ -69,7 +69,7 @@
     </label>
     <input
       type="text"
-      placeholder="Your name..."
+      placeholder="Your name"
       id="name-input"
       bind:value={name}
       required
@@ -88,7 +88,7 @@
     </label>
     <input
       type="email"
-      placeholder="Your email..."
+      placeholder="Your email"
       id="email-input"
       bind:value={email}
       required
@@ -104,7 +104,7 @@
       >
     </label>
     <textarea
-      placeholder="Your Message..."
+      placeholder="Your message"
       id="message-input"
       bind:value={message}
       required
@@ -149,7 +149,7 @@
   }
   @media (max-width: 480px) {
     .legend {
-      margin-top: 40px;
+      margin-top: 100px;
     }
   }
   form fieldset {

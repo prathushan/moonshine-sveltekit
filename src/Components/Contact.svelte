@@ -35,7 +35,7 @@
               />
               <div>
                 <h3>Address</h3>
-                <p>{contactData.address.addressDetails}</p>
+                <p class="mob-text-sm">{contactData.address.addressDetails}</p>
               </div>
             </div>
           {/if}
@@ -88,6 +88,13 @@
     }
     .contact {
       height: 50%;
+    }
+    .mob-text-sm{
+      padding-left:70px;
+      padding-right:70px;
+    }
+    .info-block{
+      margin-bottom:15px;
     }
   }
   @media (min-width: 750px) {
