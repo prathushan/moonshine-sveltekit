@@ -92,10 +92,10 @@
 /* Mobile (max-width: 767px) */
 @media screen and (max-width: 767px) {
   
-    body {
+    /* body {
     margin: 0;
     max-width: 100% !important;
-   }
+   } */
   .text-section h1 {
     font-size: 32px;
     text-align: center;

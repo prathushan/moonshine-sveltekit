@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { servicesQuery } from '$lib/queries/Services';
-  // import SkeltonCard from '../Components/SkeltonCard.svelte';
   import Breadcrumbs from '../Components/Breadcrumbs.svelte';
 
   let servicesData: any = null;
@@ -9,7 +8,7 @@
 
   onMount(async () => {
     try {
-      const res = await fetch('/api/services'); // updated to match your actual API
+      const res = await fetch('/api/services'); 
       const data = await res.json();
       
         servicesData = data;
@@ -173,7 +172,6 @@ border-radius:20px;
   }
 
   .card {
-    /* background: white; */
     border: 1px solid #009387;
     border-radius: 16px;
     overflow: hidden;
