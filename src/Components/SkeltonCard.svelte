@@ -1,4 +1,4 @@
-<div class="skeleton-card">
+<!-- <div class="skeleton-card">
     <div class="image-placeholder shimmer"></div>
     <div class="text-placeholder shimmer short"></div>
     <div class="text-placeholder shimmer"></div>
@@ -41,4 +41,4 @@
       0% { background-position: -400% 0; }
       100% { background-position: 400% 0; }
     }
-  </style>
+  </style> -->

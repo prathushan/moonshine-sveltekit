@@ -2,12 +2,12 @@
   import { onMount } from "svelte";
   import { client } from "$lib/sanityClient";
   import { footerQuery } from "$lib/queries/Footer";
-  import FooterNewsletter from './NewsletterForm.svelte';
-  import { getNewsletterHeadingQuery } from '$lib/queries/newsletterSettings';
+  import FooterNewsletter from "./NewsletterForm.svelte";
+  import { getNewsletterHeadingQuery } from "$lib/queries/newsletterSettings";
   import "../app.css";
 
   let footer = null;
-  let heading = 'Newsletter';
+  let heading = "Newsletter";
 
   onMount(async () => {
     try {
@@ -20,7 +20,7 @@
       const res = await client.fetch(getNewsletterHeadingQuery);
       heading = res?.heading || heading;
     } catch (err) {
-      console.error('Failed to fetch newsletter heading:', err);
+      console.error("Failed to fetch newsletter heading:", err);
     }
   });
 </script>
@@ -29,12 +29,15 @@
   <footer class="ft-root">
     <div class="ft-container">
       <div class="ft-eco ft-col">
-        <img class="ft-eco-img" src={footer.ecoBadge?.asset?.url} alt="Eco Friendly" />
+        <img
+          class="ft-eco-img"
+          src={footer.ecoBadge?.asset?.url}
+          alt="Eco Friendly"
+        />
         <p class="logo-head">{footer.ecoText}</p>
       </div>
 
       <div class="ft-main-links">
-        <!-- Company Links Section -->
         <div class="ft-company">
           <h3 class="soc-head">Company</h3>
           <ul class="ft-links">
@@ -52,11 +55,27 @@
               {#if i % 2 === 0}
                 <div class="social-row">
                   <a href={link.url} target="_blank" aria-label={link.platform}>
-                    <img src={link.icon.asset.url} alt={link.platform} width="50" height="50" loading="lazy" />
+                    <img
+                      src={link.icon.asset.url}
+                      alt={link.platform}
+                      width="50"
+                      height="50"
+                      loading="lazy"
+                    />
                   </a>
                   {#if footer.socialLinks[i + 1]}
-                    <a href={footer.socialLinks[i + 1].url} target="_blank" aria-label={footer.socialLinks[i + 1].platform}>
-                      <img src={footer.socialLinks[i + 1].icon.asset.url} alt={footer.socialLinks[i + 1].platform} width="50" height="50" loading="lazy" />
+                    <a
+                      href={footer.socialLinks[i + 1].url}
+                      target="_blank"
+                      aria-label={footer.socialLinks[i + 1].platform}
+                    >
+                      <img
+                        src={footer.socialLinks[i + 1].icon.asset.url}
+                        alt={footer.socialLinks[i + 1].platform}
+                        width="50"
+                        height="50"
+                        loading="lazy"
+                      />
                     </a>
                   {/if}
                 </div>
@@ -84,7 +103,9 @@
         {#each footer.footerButtons as btn}
           <a
             href={btn.url}
-            class={btn.style === "primary" ? "ft-btn-primary" : "ft-btn-secondary"}
+            class={btn.style === "primary"
+              ? "ft-btn-primary"
+              : "ft-btn-secondary"}
           >
             {btn.label}
           </a>
@@ -99,7 +120,9 @@
     margin-left: 30px;
   }
 
-  .ft-company, .ft-social, .ft-contact {
+  .ft-company,
+  .ft-social,
+  .ft-contact {
     margin-top: 30px;
   }
 
@@ -156,7 +179,7 @@
   .soc-head {
     margin-top: 12px;
     font-size: 16px;
-    font-family: 'Inter';
+    font-family: "Inter";
   }
 
   .social-icons {
@@ -196,7 +219,7 @@
     color: #ff6600;
     border: 2px solid #ff6600;
   }
-  /* Responsive adjustments */
+
   @media (max-width: 768px) {
     .ft-container {
       flex-direction: column;
@@ -220,7 +243,7 @@
 
     .ft-btn-primary,
     .ft-btn-secondary {
-      width: 100%; /* Make buttons take full width on mobile */
+      width: 100%;
       padding: 12px 20px;
     }
   }
@@ -243,21 +266,24 @@
     .ft-btn-secondary {
       padding: 12px 20px;
     }
-    .ft-eco-img{
+    .ft-eco-img {
       width: 100%;
     }
-    .logo-head{
+    .logo-head {
       margin-left: 0;
     }
-    .ft-links{
+    .ft-links {
       gap: 10px;
       display: grid;
       grid-template-columns: 6fr 6fr;
     }
-    .ft-company, .ft-social, .ft-contact{
+    .ft-company,
+    .ft-social,
+    .ft-contact {
       margin-top: 0;
     }
-    .social-row, .social-icons{
+    .social-row,
+    .social-icons {
       gap: 10px;
     }
   }

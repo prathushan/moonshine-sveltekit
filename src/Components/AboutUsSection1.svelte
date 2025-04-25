@@ -1,12 +1,10 @@
 <script>
   export let sectionData;
-
-  // Optional: You can adjust positions here
-   const moonPositions = [
-    { top: '12%', left: '6%' },      // white moon
-    { bottom: '18%', right: '9%' },  // grey moon
-    { top: '55%', left: '75%' },     // green moon
-    { bottom: '5%', left: '8%' }     // black moon (new position)
+  const moonPositions = [
+    { top: "12%", left: "6%" },
+    { bottom: "18%", right: "9%" },
+    { top: "55%", left: "75%" },
+    { bottom: "5%", left: "8%" },
   ];
 </script>
 
@@ -26,11 +24,21 @@
         <div class="image-row">
           <div class="image-container">
             <span class="corner-deco"></span>
-            <img class="image" src={sectionData.image1.asset.url} alt=""  loading="lazy"  />
+            <img
+              class="image"
+              src={sectionData.image1.asset.url}
+              alt=""
+              loading="lazy"
+            />
           </div>
 
-          <div class="image-container"> 
-            <img class="image" src={sectionData.image2.asset.url} alt=""  loading="lazy"  />
+          <div class="image-container">
+            <img
+              class="image"
+              src={sectionData.image2.asset.url}
+              alt=""
+              loading="lazy"
+            />
             <span class="corner-deco1"></span>
           </div>
         </div>
@@ -38,43 +46,71 @@
     {/if}
   </div>
 
-  <!-- Decorative moons -->
-  <img class="moon-deco" src="/moon-white.png" alt="White Moon"  loading="lazy"  style="top: {moonPositions[0].top}; left: {moonPositions[0].left};" />
-<img class="moon-deco" src="/moon-grey.png" alt="Grey Moon"  loading="lazy"  style="bottom: {moonPositions[1].bottom}; right: {moonPositions[1].right};" />
-<img class="moon-deco" src="/moon-green.png" alt="Green Moon"  loading="lazy"  style="top: {moonPositions[2].top}; left: {moonPositions[2].left};" />
-<img class="moon-deco" src="/moon-black.png" alt="Black Moon"  loading="lazy"  style="bottom: {moonPositions[3].bottom}; left: {moonPositions[3].left};" />
-   
+  <img
+    class="moon-deco"
+    src="/moon-white.png"
+    alt="White Moon"
+    loading="lazy"
+    style="top: {moonPositions[0].top}; left: {moonPositions[0].left};"
+  />
+  <img
+    class="moon-deco"
+    src="/moon-grey.png"
+    alt="Grey Moon"
+    loading="lazy"
+    style="bottom: {moonPositions[1].bottom}; right: {moonPositions[1].right};"
+  />
+  <img
+    class="moon-deco"
+    src="/moon-green.png"
+    alt="Green Moon"
+    loading="lazy"
+    style="top: {moonPositions[2].top}; left: {moonPositions[2].left};"
+  />
+  <img
+    class="moon-deco"
+    src="/moon-black.png"
+    alt="Black Moon"
+    loading="lazy"
+    style="bottom: {moonPositions[3].bottom}; left: {moonPositions[3].left};"
+  />
 </section>
-
 
 <style>
   .about-section {
-    background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
+    background: linear-gradient(
+      to right,
+      #e8f8f9 0%,
+      #d4f1f2 50%,
+      #ffffff 100%
+    );
     padding: 4rem 2rem;
- 
+
     display: flex;
     justify-content: center;
   }
 
-
-
-  
   .moon-deco {
-  position: absolute;
-  width: 60px;
-  height: 60px;
- 
-  pointer-events: none;
-  z-index: 0;
-}
+    position: absolute;
+    width: 60px;
+    height: 60px;
 
-.about-section {
-  position: relative; /* Required for absolute positioning inside */
-  background: linear-gradient(to right, #e8f8f9 0%, #d4f1f2 50%, #ffffff 100%);
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-}
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-section {
+    position: relative;
+    background: linear-gradient(
+      to right,
+      #e8f8f9 0%,
+      #d4f1f2 50%,
+      #ffffff 100%
+    );
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+  }
   .content-wrapper {
     display: flex;
     max-width: 1200px;
@@ -95,7 +131,7 @@
     font-weight: 500;
     color: #0b2447;
     margin-bottom: 1rem;
-    font-family:inter;
+    font-family: inter;
   }
 
   .subtitle {
@@ -104,7 +140,7 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: #1a1a1a;
-     font-family: 'Covered By Your Grace', cursive;
+    font-family: "Covered By Your Grace", cursive;
   }
 
   .highlight {
@@ -118,7 +154,7 @@
     color: #000;
     line-height: 1.8;
     max-width: 600px;
-    font-family:inter;
+    font-family: inter;
   }
 
   .image-content {
@@ -141,7 +177,7 @@
     width: 300px;
     height: 400px;
     object-fit: cover;
-    border-radius:5px;
+    border-radius: 5px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
 
@@ -156,17 +192,17 @@
     border-radius: 5px;
     z-index: 3;
   }
-.corner-deco1 {
-  position: absolute;
-  bottom: -12px;
-  right: -12px;
-  width: 24px;
-  height: 24px;
-  border-bottom: 4px solid #00b386;
-  border-right: 4px solid #00b386;
-  border-radius: 5px;
-  z-index: 3;
-}
+  .corner-deco1 {
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    border-bottom: 4px solid #00b386;
+    border-right: 4px solid #00b386;
+    border-radius: 5px;
+    z-index: 3;
+  }
   @media (max-width: 768px) {
     .content-wrapper {
       flex-direction: column;
@@ -191,70 +227,66 @@
     }
   }
 
-/* Tablet view (up to 1024px) */
-@media (max-width: 1024px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
+  /* Tablet view (up to 1024px) */
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .image-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .image {
+      width: 250px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 48px;
+    }
+
+    .subtitle,
+    p {
+      font-size: 16px;
+    }
   }
 
-  .image-row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  /* Mobile view (up to 600px) */
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 36px;
+    }
+
+    .image-row {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+    }
+
+    .corner-deco,
+    .corner-deco1 {
+      width: 14px;
+      height: 14px;
+      top: -6px;
+      left: -6px;
+      border-width: 3px;
+    }
+
+    .subtitle,
+    .highlight,
+    p {
+      font-size: 15px;
+    }
   }
-
-  .image {
-    width: 250px;
-    height: auto;
-  }
-
-  h2 {
-    font-size: 48px;
-  }
-
-  .subtitle,
-  p {
-    font-size: 16px;
-  }
-}
-
-/* Mobile view (up to 600px) */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 36px;
-  }
-
-  .image-row {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .image {
-    width: 100%;
-    height: auto;
-  }
-
-  .corner-deco,
-  .corner-deco1 {
-    width: 14px;
-    height: 14px;
-    top: -6px;
-    left: -6px;
-    border-width: 3px;
-  }
-
-  .subtitle,
-  .highlight,
-  p {
-    font-size: 15px;
-  }
-}
-
-
-
-
 </style>
