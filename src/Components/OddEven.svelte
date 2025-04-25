@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from 'svelte';
-  import { client } from '$lib/sanityClient';
-  import { oddEvenQuery } from '$lib/queries/OddEven';
-  import '../app.css'
+  import { onMount } from "svelte";
+  import { client } from "$lib/sanityClient";
+  import { oddEvenQuery } from "$lib/queries/OddEven";
+  import "../app.css";
 
   let section = null;
 
@@ -17,13 +17,11 @@
 
 {#if section}
   <section class="oe-wrapper">
-    <!-- Main Heading -->
     <div class="oe-heading">
-     
       {#each section.mainHeading as block}
-        {#if block._type === 'block'}
+        {#if block._type === "block"}
           {#each block.children as span}
-            {#if span.marks && span.marks.includes('em')}
+            {#if span.marks && span.marks.includes("em")}
               <em class="oe-em">{span.text}</em>
             {:else}
               <span class="oe-span">{span.text}</span>
@@ -31,7 +29,6 @@
           {/each}
         {/if}
       {/each}
-    
     </div>
 
     <!-- Content Sections -->
@@ -42,9 +39,9 @@
             {#if sec.highlight}
               <h3 class="oe-highlight">
                 {#each sec.highlight as block}
-                  {#if block._type === 'block'}
+                  {#if block._type === "block"}
                     {#each block.children as span}
-                      {#if span.marks && span.marks.includes('em')}
+                      {#if span.marks && span.marks.includes("em")}
                         <em>{span.text}</em>
                       {:else}
                         <span>{span.text}</span>
@@ -70,7 +67,7 @@
                       src={sec.testimonial.companyLogo.asset.url}
                       alt="Company Logo"
                       class="oe-logo"
-                      loading="lazy" 
+                      loading="lazy"
                     />
                   {/if}
                 </div>
@@ -93,13 +90,13 @@
 {/if}
 
 <style>
- .oe-wrapper {
-    background-color: #FDF3EA;
+  .oe-wrapper {
+    background-color: #fdf3ea;
     padding: 40px 45px 65px 45px;
   }
 
   .oe-heading {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 70px;
     line-height: 70px;
@@ -108,7 +105,7 @@
   }
 
   .oe-em {
-    font-family: 'Covered By Your Grace', cursive;
+    font-family: "Covered By Your Grace", cursive;
     color: #009387;
     font-size: 60px;
     font-weight: 400;
@@ -130,12 +127,12 @@
 
   .oe-description {
     font-size: 18px;
-    color: #58595D;
-    font-family: 'Inter', sans-serif;
+    color: #58595d;
+    font-family: "Inter", sans-serif;
   }
 
   .oe-highlight {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 53px;
     line-height: 60px;
@@ -160,15 +157,15 @@
     position: absolute;
     font-size: 80px;
     line-height: 38px;
-    color: #FF6D2C;
+    color: #ff6d2c;
     top: -3px;
     left: 39px;
     z-index: 2;
-    background-color: #FDF3EA;
+    background-color: #fdf3ea;
   }
 
   blockquote p {
-    color: #58595D;
+    color: #58595d;
     font-size: 16px;
     font-style: italic;
     line-height: 30px;
@@ -182,7 +179,7 @@
   }
 
   .oe-name {
-    color: #A89B90;
+    color: #a89b90;
     font-size: 14px;
     font-family: fantasy;
   }
@@ -192,7 +189,7 @@
   }
 
   .oe-button {
-    background-color: #FF6D2C;
+    background-color: #ff6d2c;
     padding: 25px 80px;
     border-radius: 15px;
     border-top: 2px solid black;
@@ -211,42 +208,36 @@
     font-weight: 700;
   }
   @media (max-width: 768px) {
-  .oe-heading, .oe-em {
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0; 
-    text-align: left;
-  }
-  /* .ic-title{
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0; 
-    text-align: left;
-  } */
+    .oe-heading,
+    .oe-em {
+      font-size: 32px;
+      line-height: 40px;
+      margin: 0;
+      text-align: left;
+    }
 
-  .oe-wrapper {
-    padding: 20px; 
-  }
+    .oe-wrapper {
+      padding: 20px;
+    }
 
-  .oe-sections {
-    display: block;
-    width: 100%;
-  }
+    .oe-sections {
+      display: block;
+      width: 100%;
+    }
 
-  .oe-row {
-    width: 100%;
-  }
+    .oe-row {
+      width: 100%;
+    }
 
-  .oe-highlight {
-    font-size: 28px;
-    line-height: 38px;
+    .oe-highlight {
+      font-size: 28px;
+      line-height: 38px;
+    }
+    .oe-button {
+      font-size: 14px;
+      padding: 18px;
+      margin: 20px auto;
+      display: flex;
+    }
   }
-  .oe-button{
-    font-size: 14px;
-    padding: 18px;
-    margin: 20px auto;
-    display: flex;
-  }
-}
-
 </style>

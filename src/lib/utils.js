@@ -1,8 +1,8 @@
 export function slugify(text) {
   return text
     .toLowerCase()
-    .replace(/[^\w\s-]/g, '') // remove non-word
-    .replace(/\s+/g, '-')     // spaces to dashes
+    .replace(/[^\w\s-]/g, '') 
+    .replace(/\s+/g, '-')    
     .replace(/-+/g, '-')
     .trim();
 }

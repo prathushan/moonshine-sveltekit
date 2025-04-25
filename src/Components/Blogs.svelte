@@ -1,50 +1,59 @@
 <script>
-  import { onMount } from 'svelte';
-  import Breadcrumbs from './Breadcrumbs.svelte';
+  import { onMount } from "svelte";
+  import Breadcrumbs from "./Breadcrumbs.svelte";
   export let limit = 3;
 
   let blogs = [];
-  let sectionTitle = 'Loading...';
+  let sectionTitle = "Loading...";
 
   onMount(async () => {
     try {
       const [blogsRes, settingsRes] = await Promise.all([
-        fetch('/api/blogs'),
-        fetch('/api/BlogSettings')
+        fetch("/api/blogs"),
+        fetch("/api/BlogSettings"),
       ]);
 
       blogs = await blogsRes.json();
 
       const settingsData = await settingsRes.json();
-      sectionTitle = settingsData?.sectionTitle || 'Latest trends & insights';
+      sectionTitle = settingsData?.sectionTitle || "Latest trends & insights";
     } catch (err) {
-      console.error('Failed to load data:', err);
-      // sectionTitle = 'Latest trends & insights';
+      console.error("Failed to load data:", err);
     }
   });
 
   const formatDate = (date) =>
-    new Date(date).toLocaleDateString('en-US', { dateStyle: 'medium' });
+    new Date(date).toLocaleDateString("en-US", { dateStyle: "medium" });
 </script>
 
 <div class="lt-section">
   <h1 class="lt-title">
-    {#each sectionTitle.split(' ') as word, i}
-      {#if word.toLowerCase().includes('insights')}
-        <span style="color: #0C9A8B; font-family: 'Covered By Your Grace', cursive;">
+    {#each sectionTitle.split(" ") as word, i}
+      {#if word.toLowerCase().includes("insights")}
+        <span
+          style="color: #0C9A8B; font-family: 'Covered By Your Grace', cursive;"
+        >
           {word}
         </span>
       {:else}
         {word}
       {/if}
-      {i !== sectionTitle.split(' ').length - 1 ? ' ' : ''}
+      {i !== sectionTitle.split(" ").length - 1 ? " " : ""}
     {/each}
   </h1>
 
   <div class="lt-asym-grid">
     {#each blogs.slice(0, limit) as blog, i}
-      <a href={`/blogs/${blog.slug.current}`} class={`lt-card ${i === 0 ? 'large' : 'small'}`}>
-        <img src={blog.mainImage.asset.url} alt={blog.title} class="lt-image"  loading="lazy" />
+      <a
+        href={`/blogs/${blog.slug.current}`}
+        class={`lt-card ${i === 0 ? "large" : "small"}`}
+      >
+        <img
+          src={blog.mainImage.asset.url}
+          alt={blog.title}
+          class="lt-image"
+          loading="lazy"
+        />
 
         <div class="lt-meta">
           <span class="lt-date">{formatDate(blog.publishedAt)}</span>
@@ -62,8 +71,6 @@
   <a href="/blogs" class="view-all">View all →</a>
 </div>
 
-
-
 <style>
   .lt-section {
     padding: 60px 30px;
@@ -80,16 +87,16 @@
   }
 
   .view-all {
-  display: inline-block;
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  color: #009387;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  left: 0;
-  float: right;
-}
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #009387;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    left: 0;
+    float: right;
+  }
 
   .lt-asym-grid {
     display: grid;
@@ -158,7 +165,7 @@
     max-width: 40%;
     line-height: 1.4;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    color:#000000;
+    color: #000000;
     font-family: inter;
     font-weight: 300;
   }
@@ -200,15 +207,16 @@
     }
   }
   @media (max-width: 768px) {
-    .lt-title, .blog-heading{
+    .lt-title,
+    .blog-heading {
       font-size: 34px;
-    line-height: 40px; 
-    text-align: left;
+      line-height: 40px;
+      text-align: left;
     }
   }
   @media (max-width: 360px) {
-  .lt-title-bubble {
-    font-size: 10px;
+    .lt-title-bubble {
+      font-size: 10px;
+    }
   }
-}
 </style>

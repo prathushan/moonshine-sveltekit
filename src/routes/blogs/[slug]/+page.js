@@ -1,4 +1,4 @@
-import { client } from '$lib/sanityClient';
+import { client } from "$lib/sanityClient";
 
 export async function load({ params }) {
   const { slug } = params;
@@ -18,11 +18,11 @@ export async function load({ params }) {
   if (!blog) {
     return {
       status: 404,
-      error: new Error('Blog not found')
+      error: new Error("Blog not found"),
     };
   }
 
   return {
-    blog
+    blog,
   };
 }

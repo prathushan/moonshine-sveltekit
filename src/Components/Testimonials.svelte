@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { onMount, onDestroy, tick } from 'svelte';
-  import { browser } from '$app/environment';
+  import { onMount, onDestroy, tick } from "svelte";
+  import { browser } from "$app/environment";
   import "../app.css";
 
   interface Testimonial {
@@ -20,7 +20,7 @@
 
   if (browser) {
     onMount(async () => {
-      const res = await fetch('/api/testimonials');
+      const res = await fetch("/api/testimonials");
       testimonials = await res.json();
       duplicatedTestimonials = [...testimonials, ...testimonials];
       await tick();
@@ -48,10 +48,10 @@
     }
 
     function matchCardHeights() {
-      const cards = document.querySelectorAll('.ts-card');
+      const cards = document.querySelectorAll(".ts-card");
       let maxHeight = 0;
       cards.forEach((card) => {
-        (card as HTMLElement).style.height = 'auto';
+        (card as HTMLElement).style.height = "auto";
         maxHeight = Math.max(maxHeight, (card as HTMLElement).offsetHeight);
       });
       cards.forEach((card) => {
@@ -70,7 +70,12 @@
         {#each duplicatedTestimonials as testimonial}
           <div class="ts-card">
             <div class="ts-user">
-              <img class="ts-avatar" src={testimonial.image.asset.url} alt={testimonial.name} loading="lazy"  />
+              <img
+                class="ts-avatar"
+                src={testimonial.image.asset.url}
+                alt={testimonial.name}
+                loading="lazy"
+              />
               <div class="ts-info">
                 <h3>{testimonial.name}</h3>
                 <p class="ts-handle">{testimonial.twitterHandle}</p>
@@ -85,8 +90,8 @@
 </section>
 
 <style>
- .ts-wrapper h2{
-    font-family: 'Inter', sans-serif;
+  .ts-wrapper h2 {
+    font-family: "Inter", sans-serif;
     font-size: 63px;
   }
   .ts-wrapper {
@@ -96,8 +101,8 @@
   }
 
   .ts-highlight {
-    color: #0C9A8B;
-    font-family: 'Covered By Your Grace', cursive;
+    color: #0c9a8b;
+    font-family: "Covered By Your Grace", cursive;
   }
 
   .ts-carousel {
@@ -148,9 +153,8 @@
   .ts-info h3 {
     margin: 0;
     font-size: 15px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
-
   }
 
   .ts-handle {
@@ -163,7 +167,7 @@
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   @media (max-width: 768px) {
@@ -171,20 +175,19 @@
       flex: 0 0 100%;
       margin: 0;
     }
-    .ts-wrapper h2{
-    font-size: 34px;
-    line-height: 40px; 
-    text-align: left;
+    .ts-wrapper h2 {
+      font-size: 34px;
+      line-height: 40px;
+      text-align: left;
+    }
+    .ts-wrapper {
+      padding: 0 28px;
+    }
+    .ts-track {
+      gap: 10px;
+    }
+    .ts-window {
+      padding: 10px;
+    }
   }
-  .ts-wrapper{
-    padding: 0 28px;
-  }
-  .ts-track{
-    gap: 10px;
-  }
-  .ts-window{
-    padding: 10px;
-  }
-  }
-
 </style>

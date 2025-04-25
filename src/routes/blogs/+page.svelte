@@ -1,71 +1,87 @@
 <script>
-  import { onMount } from 'svelte';
-  import Breadcrumbs from '../../Components/Breadcrumbs.svelte';
+  import { onMount } from "svelte";
+  import Breadcrumbs from "../../Components/Breadcrumbs.svelte";
   let blogs = [];
 
   onMount(async () => {
-    const res = await fetch('/api/blogs');
+    const res = await fetch("/api/blogs");
     blogs = await res.json();
   });
 
   const formatDate = (date) =>
-    new Date(date).toLocaleDateString('en-US', { dateStyle: 'medium' });
+    new Date(date).toLocaleDateString("en-US", { dateStyle: "medium" });
 </script>
 
 <div class="blog-section">
-  <Breadcrumbs/>
-  <h1 class="blog-heading">
-    {#each 'Latest trends & insights'.split(' ') as word, i}
-      {#if word.toLowerCase().includes('insights')}
-        <span style="color: #0C9A8B; font-family: 'Covered By Your Grace', cursive;">
+  <Breadcrumbs />
+  <div class="full-con">
+    <h1 class="blog-heading">
+      {#each "Latest trends & insights".split(" ") as word, i}
+        {#if word.toLowerCase().includes("insights")}
+          <span
+            style="color: #0C9A8B; font-family: 'Covered By Your Grace', cursive;"
+          >
+            {word}
+          </span>
+        {:else}
           {word}
-        </span>
-      {:else}
-        {word}
-      {/if}
-      {i !== 'Latest trends & insights'.split(' ').length - 1 ? ' ' : ''}
-    {/each}
-  </h1>
-  
+        {/if}
+        {i !== "Latest trends & insights".split(" ").length - 1 ? " " : ""}
+      {/each}
+    </h1>
 
-  <!-- Featured Blogs -->
-  <div class="featured-grid">
-    {#each blogs.slice(0, 3) as blog, i}
-      <a href={`/blogs/${blog.slug.current}`} class={`blog-card ${i === 0 ? 'featured-large' : 'featured-small'}`}>
-        <div class="blog-image-wrapper">
-          <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image" loading="lazy"  />
-          <div class="blog-meta">
-            <span class="blog-date">{formatDate(blog.publishedAt)}</span>
-          </div>
-        </div>
-        <div class="blog-title">{blog.title}</div>
-        <div class="lt-arrow-btn">
-          <span>&#8599;</span>
-        </div>
-      </a>
-      
-    {/each}
-  </div>
-
-  <!-- Remaining Blogs -->
-  {#if blogs.length > 3}
-    <div class="blog-grid">
-      {#each blogs.slice(3) as blog}
-        <a href={`/blogs/${blog.slug.current}`} class="blog-card blog-card-extra">
+    <div class="featured-grid">
+      {#each blogs.slice(0, 3) as blog, i}
+        <a
+          href={`/blogs/${blog.slug.current}`}
+          class={`blog-card ${i === 0 ? "featured-large" : "featured-small"}`}
+        >
           <div class="blog-image-wrapper">
-            <img src={blog.mainImage.asset.url} alt={blog.title} class="blog-image"  loading="lazy" />
+            <img
+              src={blog.mainImage.asset.url}
+              alt={blog.title}
+              class="blog-image"
+              loading="lazy"
+            />
             <div class="blog-meta">
               <span class="blog-date">{formatDate(blog.publishedAt)}</span>
             </div>
           </div>
           <div class="blog-title">{blog.title}</div>
-          <div class="lt-arrow-btn2">
+          <div class="lt-arrow-btn">
             <span>&#8599;</span>
           </div>
         </a>
       {/each}
     </div>
-  {/if}
+
+    {#if blogs.length > 3}
+      <div class="blog-grid">
+        {#each blogs.slice(3) as blog}
+          <a
+            href={`/blogs/${blog.slug.current}`}
+            class="blog-card blog-card-extra"
+          >
+            <div class="blog-image-wrapper">
+              <img
+                src={blog.mainImage.asset.url}
+                alt={blog.title}
+                class="blog-image"
+                loading="lazy"
+              />
+              <div class="blog-meta">
+                <span class="blog-date">{formatDate(blog.publishedAt)}</span>
+              </div>
+            </div>
+            <div class="blog-title">{blog.title}</div>
+            <div class="lt-arrow-btn2">
+              <span>&#8599;</span>
+            </div>
+          </a>
+        {/each}
+      </div>
+    {/if}
+  </div>
 </div>
 
 <style>
@@ -86,9 +102,6 @@
     transition: transform 0.3s ease;
   }
 
-  /* .lt-card:hover .lt-arrow-btn2 {
-    transform: scale(1.1);
-  } */
   .lt-arrow-btn {
     position: absolute;
     bottom: 80px;
@@ -111,16 +124,31 @@
   }
   .blog-section {
     padding: 10px 30px 60px 30px;
-    background-color: #f9f9f9;
-    font-family: inter;
-   
+    background: linear-gradient(
+      to right,
+      #e8f8f9 0%,
+      #d4f1f2 50%,
+      #cef5e6 100%
+    );
+    padding: 10px 20px 50px 20px;
+    font-family: "Inter", serif;
+  }
+  .full-con {
+    padding: 0 0 50px 20px;
+    background: #fff;
+    background-image: radial-gradient(circle, #e8f8f9 3px, transparent 2px);
+    background-size: 20px 20px; /* Dot size and spacing */
+    background-position:
+      0px 0px,
+      5px 5px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
   }
 
   .blog-heading {
     text-align: center;
     font-size: 60px;
     font-weight: bold;
-    /* margin-bottom: 2.5rem; */
     color: #2e2f35;
   }
 
@@ -205,17 +233,15 @@
     color: #2e2f35;
     padding: 0.5rem;
     font-weight: 300;
-    
   }
 
   .blog-grid {
     display: grid;
-    grid-template-columns:4fr 4fr 4fr;
+    grid-template-columns: 4fr 4fr 4fr;
     gap: 1.5rem;
   }
 
   .blog-card-extra {
-   
     border-radius: 20px;
     overflow: hidden;
   }
@@ -235,13 +261,13 @@
     }
   }
   @media (max-width: 768px) {
-   .blog-heading{
+    .blog-heading {
       font-size: 34px;
-    line-height: 40px; 
-    text-align: left;
+      line-height: 40px;
+      text-align: left;
     }
-    .blog-grid{
-      display:block;
+    .blog-grid {
+      display: block;
     }
   }
 </style>

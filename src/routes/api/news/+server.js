@@ -13,7 +13,7 @@ export async function GET() {
     content: item.content,
     date: item.publishedAt,
     url: item.url,
-    slug: slugify(item.title) // Convert title to URL-friendly slug
+    slug: slugify(item.title)
   }));
 
   return new Response(JSON.stringify(articles));

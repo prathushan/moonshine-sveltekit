@@ -1,7 +1,7 @@
 <script>
-  import { onMount } from 'svelte';
-  import { client } from '$lib/sanityClient';
-  import { headerQuery } from '$lib/queries/Header';
+  import { onMount } from "svelte";
+  import { client } from "$lib/sanityClient";
+  import { headerQuery } from "$lib/queries/Header";
   import "../app.css";
 
   let header = null;
@@ -28,7 +28,11 @@
           <img src={header.logo.asset.url} alt="Logo" class="logo" />
         </a>
 
-        <button class="mobile-menu-toggle" on:click={toggleMenu} aria-label="Toggle menu">
+        <button
+          class="mobile-menu-toggle"
+          on:click={toggleMenu}
+          aria-label="Toggle menu"
+        >
           ☰
         </button>
       </div>
@@ -43,7 +47,9 @@
                 <ul class="submenu">
                   {#each item.children as sub}
                     <li>
-                      <a href={"/" + sub.linkedPage.slug?.current}>{sub.label}</a>
+                      <a href={"/" + sub.linkedPage.slug?.current}
+                        >{sub.label}</a
+                      >
                     </li>
                   {/each}
                 </ul>
@@ -59,13 +65,12 @@
 <style>
   .header {
     background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 10;
     position: relative;
   }
 
   .header-container {
-    /* max-width: 1200px; */
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -90,7 +95,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .menu-item {
@@ -112,7 +117,7 @@
     left: 0;
     background: white;
     padding: 0.5rem 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     list-style: none;
     min-width: 160px;
     z-index: 5;
@@ -146,7 +151,6 @@
     cursor: pointer;
   }
 
-  /* Desktop-only styles (unchanged layout) */
   @media (min-width: 769px) {
     .header-container {
       flex-direction: row;
@@ -193,7 +197,7 @@
     .menu-item .submenu {
       display: block;
     }
-    .logo-toggle{
+    .logo-toggle {
       width: 100%;
     }
   }
