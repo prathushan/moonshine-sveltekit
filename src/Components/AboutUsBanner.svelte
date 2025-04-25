@@ -85,7 +85,7 @@
     font-size: 60px;
     font-weight: 500;
     margin-bottom: 1rem;
-    font-family: inter;
+    font-family:'Inter';
   }
 
   .text-section p {
@@ -103,7 +103,6 @@
     filter: grayscale(100%);
     position: relative;
   }
-
   @media screen and (max-width: 767px) {
     .text-section h1 {
       font-size: 32px;
@@ -147,4 +146,5 @@
       height: 45px;
     }
   }
+
 </style>
