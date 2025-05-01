@@ -1,38 +1,53 @@
-# sv
+# Moonshine – Svelte Frontend
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This repository contains the **Svelte-based frontend** for **Moonshine**, a platform that empowers Shopify stores to engage customers with personalized postcard campaigns. The Svelte frontend interacts with the **Sanity CMS** to fetch and display dynamic content related to campaigns, customer profiles, and analytics.
 
-## Creating a project
+## 🏡 About Moonshine
 
-If you're seeing this, you've probably already done this step. Congrats!
+Moonshine is a personalized text marketing tool for Shopify store owners, enabling automated postcard campaigns. Customers receive personalized, ROI-focused postcards with a personal touch. 
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🧰 Tech Stack
 
-# create a new project in my-app
-npx sv create my-app
-```
+| **Layer**             | **Technologies / Tools**                      |
+|-----------------------|-----------------------------------------------|
+| **Frontend**          | Svelte, JavaScript, TypeScript, Vite, Tailwind CSS |
+| **Backend**           | Sanity CMS (Content Lake), GROQ               |
+| **Hosting**           | Vercel                                        |
+| **State Management**  | Svelte Store                                  |
+| **APIs**              | Sanity API, GROQ                             |
 
-## Developing
+## 🔗 Backend Source Code
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+The backend for Moonshine is built with **Sanity CMS**. You can check out the full source code here:  
+[GitHub Repo – Moonshine Backend](https://github.com/prathushan/moonshine-sanity.git)
 
-```bash
-npm run dev
+## ✨ Features
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- **Campaign Management**: Display active postcard campaigns and their details.
+- **Customer Profiles**: Show customer details, interactions, and preferences.
+- **Postcard Templates**: View and select templates for campaigns.
+- **Analytics**: Display performance metrics for each campaign.
+- **SEO Optimized**: Pre-rendered pages for better SEO performance.
 
-## Building
 
-To create a production version of your app:
 
-```bash
-npm run build
-```
+## 🧪 Local Development
 
-You can preview the production build with `npm run preview`.
+**Prerequisites**  
+- Node.js (v16+ recommended)  
+- Svelte CLI: `npm install -g degit`
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+**Setup**  
+1. Clone the repository:  
+   `git clone https://github.com/prathushan/moonshine-sveltekit.git`
+
+2. Navigate to the frontend folder:  
+   `cd moonshine-sveltekit`
+
+3. Install dependencies:  
+   `npm install`
+
+4. Start the development server:  
+   `npm run dev`
+
+
