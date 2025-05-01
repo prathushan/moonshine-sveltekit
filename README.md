@@ -4,7 +4,7 @@ This repository contains the **Svelte-based frontend** for **Moonshine**, a plat
 
 ## 🏡 About Moonshine
 
-Moonshine is a personalized text marketing tool for Shopify store owners, enabling automated postcard campaigns. Customers receive personalized, ROI-focused postcards with a personal touch. 
+Moonshine is a personalized text marketing tool for Shopify store owners, enabling automated campaigns. Customers receive personalized, ROI-focused postcards with a personal touch. 
 
 ## 🧰 Tech Stack
 
