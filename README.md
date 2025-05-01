@@ -1,6 +1,6 @@
 # Moonshine – Svelte Frontend
 
-This repository contains the **Svelte-based frontend** for **Moonshine**, a platform that empowers Shopify stores to engage customers with personalized postcard campaigns. The Svelte frontend interacts with the **Sanity CMS** to fetch and display dynamic content related to campaigns, customer profiles, and analytics.
+This repository contains the **Svelte-based frontend** for **Moonshine**, a platform that empowers Shopify stores to engage customers with personalized campaigns. The Svelte frontend interacts with the **Sanity CMS** to fetch and display dynamic content related to campaigns, customer profiles, and analytics.
 
 ## 🏡 About Moonshine
 
